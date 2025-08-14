@@ -70,7 +70,7 @@ const Home = () => {
           spaceBetween={10}
           slidesPerView={8}
           loop={true}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
           breakpoints={{
             0: { slidesPerView: 1 },
             480: { slidesPerView: 2 },

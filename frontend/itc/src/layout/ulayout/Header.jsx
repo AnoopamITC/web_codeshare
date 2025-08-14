@@ -12,13 +12,13 @@ export default function Header() {
     const handleScroll = () => {
       setIsAtTop(window.scrollY === 0);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
-      {/* Red Top Header */}
+      {/* Red Top Header + Floating Logo (hides on scroll) */}
       <header className={`header-wrapper ${isAtTop ? "" : "hide"}`}>
         <div className="floating-frame">
           <img src={frameImg} alt="Logo Frame" />
@@ -33,9 +33,9 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Blue Navbar */}
-      <nav className="nav-bar">
-        {/* Mini logo when scrolled */}
+      {/* Blue Navbar - FIXED (stays on top while scrolling) */}
+      <nav className={`nav-bar ${isAtTop ? "" : "scrolled"}`}>
+        {/* Mini logo only visible when scrolled */}
         <div className={`mini-logo ${isAtTop ? "hidden" : "visible"}`}>
           <img src={smallLogo} alt="Mini Logo" />
         </div>
@@ -75,6 +75,9 @@ export default function Header() {
           <Link to="/offers">Offers</Link>
         </div>
       </nav>
+
+      {/* Spacer so content doesn't hide behind the FIXED navbar */}
+      <div className="nav-spacer" />
     </>
   );
 }

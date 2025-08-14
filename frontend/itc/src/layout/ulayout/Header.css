@@ -3,6 +3,7 @@ body {
   margin: 0;
 }
 
+/* ===== Wrapper for Red Header ===== */
 .header-wrapper {
   position: relative;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -26,57 +27,53 @@ body {
   z-index: 5;
 }
 
-.center-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin: 0 auto;
-}
-
-.phone-number {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 0 20px;
-}
-
-.search-box {
-  padding: 6px 10px;
-  border-radius: 15px;
-  border: none;
-  outline: none;
-}
-
 .right-section {
   display: flex;
-  align-items: right;
+  align-items: center;
   gap: 15px;
 }
 
 .right-section a {
   color: white;
-  text-align: right;
   text-decoration: none;
   font-size: 16px;
   padding: 0 10px;
 }
 
-/* ===== Blue Navbar ===== */
+/* ===== Blue Navbar (FIXED) ===== */
 .nav-bar {
+  position: fixed;            /* 👈 truly fixed */
+  top: 45px;                  /* sits just below the red top header initially */
+  /* left: 0; */
+  /* right: 0; */
+  width: 100%;
   background-color: #e6e6eb;
   display: flex;
   align-items: center;
-  padding: 10px 200px;
+  justify-content: space-between;
+  padding: 10px 350px;
   height: 45px;
-  position: sticky;
+  z-index: 100;
+  transition: top 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+/* When scrolled, top header hides and navbar snaps to very top */
+.nav-bar.scrolled {
   top: 0;
-  z-index: 10;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  background-color: #e6e6eb; /* keep same, or darken slightly if you want */
+}
+
+/* Reserve space below the fixed navbar so page content doesn't slide under it */
+.nav-spacer {
+  height: 45px; /* equal to .nav-bar height */
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  /* margin-left: auto; push links to the right when needed */
 }
 
 .nav-bar a {
@@ -87,12 +84,12 @@ body {
   margin: 0 15px;
 }
 
-/* ===== Floating Frame Logo ===== */
+/* ===== Floating Frame Logo (in red area) ===== */
 .floating-frame {
   position: absolute;
   top: 0;
   left: 40px;
-  z-index: 100;
+  z-index: 200;
 }
 
 .floating-frame img {
@@ -101,14 +98,16 @@ body {
   padding-left: 80px;
 }
 
-/* ===== Mini Logo ===== */
+/* ===== Mini Logo inside Blue Bar (only when scrolled) ===== */
 .mini-logo {
   position: absolute;
-  top: 0;
   left: 40px;
+  top: 6px;
   height: 60px;
   z-index: 101;
   padding-left: 80px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
 }
 
 .mini-logo img {
@@ -118,7 +117,6 @@ body {
 .mini-logo.hidden {
   opacity: 0;
   transform: translateY(-10px);
-  pointer-events: none;
 }
 
 .mini-logo.visible {
@@ -137,7 +135,7 @@ body {
   background-color: white;
   min-width: 220px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+  z-index: 9999;
 }
 
 .dropdown-content a {
@@ -160,9 +158,37 @@ body {
 .menu-toggle {
   display: none;
   font-size: 24px;
-  color: white;
+  color: #06033d;
   background: none;
   border: none;
   cursor: pointer;
   margin-left: auto;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 1200px) {
+  .nav-bar { padding: 10px 140px; }
+  .mini-logo { left: 20px; padding-left: 40px; }
+}
+
+@media (max-width: 992px) {
+  .nav-bar { padding: 10px 100px; }
+  .nav-links a { margin: 0 10px; }
+}
+
+@media (max-width: 768px) {
+  .nav-bar { padding: 10px 60px; height: 50px; }
+  .nav-spacer { height: 50px; }
+  .menu-toggle { display: block; }
+  .nav-links { 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #e6e6eb;
+    display: none;
+    padding: 10px 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  }
+  .nav-links.show { display: flex; flex-direction: column; }
 }
