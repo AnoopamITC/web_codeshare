@@ -1,0 +1,246 @@
+/* ===== Main Flex Container: Left + Right ===== */
+.home-container {
+  display: flex;
+  width: 100%;
+  min-height: 50vh;
+  margin-top: 20px;
+  gap: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Left Content ===== */
+.home-content {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-content p {
+  margin: 1rem 0;
+}
+
+/* ===== Buttons Container ===== */
+.home-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+/* ===== Button Styles ===== */
+.btn-primary {
+  background-color: #d71920;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #a5141b;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #d71920;
+  border: 2px solid #d71920;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #d71920;
+  color: #fff;
+}
+
+/* ===== Right Slider (Top Section) ===== */
+.home-slider {
+  width: 50%;
+  min-height: 50vh;
+  padding-right: 10px;
+}
+
+.home-slider .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.home-slider .swiper-slide {
+  height: 100%;
+}
+
+.home-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+/* Top slider arrows */
+.home-slider .swiper-button-next,
+.home-slider .swiper-button-prev {
+  width: 35px;
+  height: 35px;
+}
+
+.home-slider .swiper-button-next::after,
+.home-slider .swiper-button-prev::after {
+  font-size: 22px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* ===== New Section Below ===== */
+.home-below {
+  width: 100%;
+  padding: 60px 20px;   
+  margin-top: 40px;      
+  background-color: #f5f5f5;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+/* ===== Courses Slider ===== */
+.courses-slider {
+  width: 100%;
+  padding: 20px 10px; /* smaller padding */
+  margin-top: 10px;
+  /* margin-bottom: 60px; */
+  box-sizing: border-box;
+  position: relative;
+  min-height: 180px; /* smaller slider height */
+}
+
+.course-card {
+  background: #f0f0f0;
+  padding: 10px;      /* smaller padding */
+  min-height: 50px;  /* card height  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+/* Courses slider arrows outside cards */
+/* .courses-slider .swiper-button-next,
+.courses-slider .swiper-button-prev {
+  color: #d71920;
+  font-weight: bold;
+  top: 50%;
+  width: 30px; 
+  height: 30px; 
+  margin-top: -15px;
+  z-index: 10;
+}
+
+.courses-slider .swiper-button-next {
+  right: -15px;
+}
+
+.courses-slider .swiper-button-prev {
+  left: -15px;
+}
+
+.courses-slider .swiper-button-next::after,
+.courses-slider .swiper-button-prev::after {
+  font-size: 20px;
+} */
+
+/* ===== Footer Spacing Fix ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .courses-slider {
+    padding: 15px 10px;
+  }
+
+  .courses-slider .swiper-button-next,
+  .courses-slider .swiper-button-prev {
+    width: 28px;
+    height: 28px;
+    margin-top: -14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 20px;
+  }
+
+  .home-content,
+  .home-slider {
+    width: 100%;
+  }
+
+  .home-slider {
+    min-height: 300px;
+    padding-right: 0;
+  }
+
+  .courses-slider {
+    padding: 15px 5px;
+    min-height: 150px;
+  }
+
+  .courses-slider .swiper-button-next {
+    right: -10px;
+  }
+
+  .courses-slider .swiper-button-prev {
+    left: -10px;
+  }
+
+  .course-card {
+    min-height: 120px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-slider {
+    padding: 10px 5px;
+    min-height: 120px;
+  }
+
+  .courses-slider .swiper-button-next {
+    right: -8px;
+  }
+
+  .courses-slider .swiper-button-prev {
+    left: -8px;
+  }
+
+  .course-card {
+    min-height: 100px;
+    padding: 8px;
+  }
+}

@@ -1,0 +1,168 @@
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+.header-wrapper {
+  position: relative;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.header-wrapper.hide .top-header,
+.header-wrapper.hide .floating-frame {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* ===== Red Top Header ===== */
+.top-header {
+  background-color: #d71920;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0 40px;
+  height: 45px;
+  position: relative;
+  z-index: 5;
+}
+
+.center-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.phone-number {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.search-box {
+  padding: 6px 10px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}
+
+.right-section {
+  display: flex;
+  align-items: right;
+  gap: 15px;
+}
+
+.right-section a {
+  color: white;
+  text-align: right;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+/* ===== Blue Navbar ===== */
+.nav-bar {
+  background-color: #e6e6eb;
+  display: flex;
+  align-items: center;
+  padding: 10px 200px;
+  height: 45px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-bar a {
+  color: #06033d;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 15px;
+}
+
+/* ===== Floating Frame Logo ===== */
+.floating-frame {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  z-index: 100;
+}
+
+.floating-frame img {
+  height: 180px;
+  width: 150px;
+  padding-left: 80px;
+}
+
+/* ===== Mini Logo ===== */
+.mini-logo {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  height: 60px;
+  z-index: 101;
+  padding-left: 80px;
+}
+
+.mini-logo img {
+  height: 60px;
+}
+
+.mini-logo.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.mini-logo.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Dropdown ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===== Mobile Menu Button ===== */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}

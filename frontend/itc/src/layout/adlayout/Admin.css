@@ -1,0 +1,180 @@
+
+.admin-header {
+  width: 100%;
+  height: 80px;
+  background-color: #ace1ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+}
+
+.welcome-text {
+  font-size: 24px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.header-right .logout-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-right .logout-btn:hover {
+  background-color: #e60000;
+}
+
+/* Menu button in header */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* ================= Layout ================= */
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-area {
+  display: flex;
+  flex: 1;
+}
+
+/* ================= Sidebar ================= */
+.admin-sidebar {
+  background-color: #ace1ff;
+  color: #33334d;
+  padding-top: 20px;
+  transition: width 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  height: calc(100vh - 80px);
+}
+
+.admin-sidebar.open {
+  width: 220px;
+}
+
+.admin-sidebar.closed {
+  width: 60px;
+}
+
+/* Sidebar list */
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar ul li {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.admin-sidebar ul li:hover {
+  background-color: #ffffff;
+}
+.link-text {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+/* ================= Main content ================= */
+.admin-main {
+  flex: 1;
+  padding: 20px;
+}
+
+
+/* ================= Mobile Responsive ================= */
+@media screen and (max-width: 768px) {
+  .admin-sidebar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    height: calc(100% - 80px);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+    width: 220px;
+  }
+
+  .admin-sidebar.closed {
+    transform: translateX(-100%);
+  }
+
+  .content-area {
+    flex-direction: column;
+  }
+    .sidebar-link .link-text {
+    display: inline; /* shown only when sidebar is open */
+  }
+}
+
+/* ================= Optional Overlay for Mobile ================= */
+.overlay {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .overlay.show {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-link.active {
+  font-weight: bold;
+  
+}
+/* Only hide text when sidebar is closed AND screen is desktop */
+@media screen and (min-width: 769px) {
+  .admin-sidebar.closed .link-text {
+    display: none;
+  }
+}
