@@ -61,6 +61,79 @@
   color: #fff;
 }
 
+/* ===== Images Row under Buttons ===== */
+.home-images {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+/* .btn span {
+
+} */
+
+.btn {
+  background-color: #e9e9e9;
+  width: 160px;
+  height: 60px;
+  margin-top:10px ;
+  color: #fff;
+  border: 2px solid #e9e9e9;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+
+  /* Arrow shape (pointing right) */
+  clip-path: polygon(
+    0% 0%,    /* top-left */
+    85% 0%,   /* before arrow tip */
+    100% 50%, /* arrow tip */
+    85% 100%, /* after arrow tip */
+    0% 100%   /* bottom-left */
+  );
+}
+
+
+
+.home-images {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.home-images .btn {
+  margin-right: 15px;
+}
+
+.image-card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  margin-top: 10px;
+
+}
+
+.image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.image-card img {
+  width: 130px;
+  height: 50px;
+  object-fit:fill;
+  border-radius: 5px;
+}
+
+
 /* ===== Right Slider (Top Section) ===== */
 .home-slider {
   width: 50%;
@@ -98,6 +171,7 @@
   font-weight: bold;
 }
 
+
 /* ===== New Section Below ===== */
 .home-below {
   width: 100%;
@@ -112,56 +186,43 @@
 /* ===== Courses Slider ===== */
 .courses-slider {
   width: 100%;
-  padding: 20px 10px; /* smaller padding */
+  padding: 20px 10px;
   margin-top: 10px;
-  /* margin-bottom: 60px; */
   box-sizing: border-box;
   position: relative;
-  min-height: 180px; /* smaller slider height */
+  min-height: 180px;
 }
 
 .course-card {
-  background: #f0f0f0;
-  padding: 10px;      /* smaller padding */
-  min-height: 50px;  /* card height  */
+  background: #fff;
+  padding: 5px; /* small padding so image doesn't touch edges */
+  min-height: 100px; /* card height */
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   border-radius: 8px;
-  font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-card img {
+  width: 50%;
+  height: 50%;
+  object-fit:cover; /* keep image proportions */
+  border-radius: 6px;
 }
 
 .course-card:hover {
   transform: scale(1.05);
 }
 
-/* Courses slider arrows outside cards */
-/* .courses-slider .swiper-button-next,
-.courses-slider .swiper-button-prev {
-  color: #d71920;
-  font-weight: bold;
-  top: 50%;
-  width: 30px; 
-  height: 30px; 
-  margin-top: -15px;
-  z-index: 10;
-}
 
-.courses-slider .swiper-button-next {
-  right: -15px;
-}
 
-.courses-slider .swiper-button-prev {
-  left: -15px;
-}
 
-.courses-slider .swiper-button-next::after,
-.courses-slider .swiper-button-prev::after {
-  font-size: 20px;
-} */
+
+
+
 
 /* ===== Footer Spacing Fix ===== */
 body {
@@ -174,6 +235,7 @@ body {
 main {
   flex: 1;
 }
+
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
