@@ -22,7 +22,7 @@ import t2 from "@/assets/images/t2.png"
 import t3 from "@/assets/images/t3.png"
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay} from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, FreeMode} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -218,14 +218,14 @@ const Home = () => {
 
       {/* ===== Courses Slider ===== */}
     <div className="courses-slider">
-      <Swiper 
+<Swiper
   modules={[Autoplay]}
   spaceBetween={10}
   slidesPerView={10} // auto width for smooth continuous scroll
   loop={true}
   freeMode={true}
   freeModeMomentum={false}
-  speed={4000} // slow & smooth
+  speed={2000} // slow & smooth
   allowTouchMove={false}
   autoplay={{
     delay: 0,
@@ -233,7 +233,7 @@ const Home = () => {
     pauseOnMouseEnter: false,
   }}
   style={{
-    "--swiper-wrapper-transition-timing-function": "linear", width: "100%"  // <-- Linear easing
+    "--swiper-wrapper-transition-timing-function": "linear", // <-- Linear easing
   }}
 >
   {repeatedCourses.map((course, index) => (
