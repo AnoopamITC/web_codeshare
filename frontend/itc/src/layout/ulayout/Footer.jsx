@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3>QUICK LINKS</h3>
           <ul>
-            <li><Link to='/'>Home</Link></li>
+            <li ><Link to='/' style={{ textAlign:'center'}}>Home</Link></li>
             <li><Link to='/aboutus'>About Us</Link></li>
             <li><Link to='/schoolcourses'>School Courses</Link></li>
             <li><Link to='/professionalcourses'>Professional Courses</Link></li>

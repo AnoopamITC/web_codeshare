@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import i1 from '@/assets/images/c1.png';
 import i2 from '@/assets/images/c2.png';
 import i3 from '@/assets/images/c3.png';
@@ -17,7 +17,9 @@ import a1 from '@/assets/images/a1.png';
 import a2 from '@/assets/images/a2.png';
 import  a3 from '@/assets/images/a3.jpg';
 import a4 from '@/assets/images/a4.png';
-
+import t1 from "@/assets/images/t1.png"
+import t2 from "@/assets/images/t2.png"
+import t3 from "@/assets/images/t3.png"
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay} from 'swiper/modules';
@@ -25,7 +27,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Home.css';
+import { Users, Briefcase, Calendar, BookOpen,  ArrowUpRight } from "lucide-react";
+import { MotionConfig, motion } from "framer-motion";
 
+// course slider
 const courses = [
   { id: 1, title: "Course 1",Image:i4 },
   { id: 2, title: "Course 2",Image:i5 },
@@ -43,10 +48,116 @@ const courses = [
 ];
 const repeatedCourses = [...courses, ...courses];
  
+
+// counter 
+function useCountUpOnView(target, durationMs = 10000) {
+  const [value, setValue] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            const start = performance.now();
+            let raf = 0;
+            const tick = (now) => {
+              const t = Math.min(1, (now - start) / durationMs);
+              setValue(Math.round(target * t));
+              if (t < 1) raf = requestAnimationFrame(tick);
+            };
+            raf = requestAnimationFrame(tick);
+            return () => cancelAnimationFrame(raf);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [target, durationMs, hasAnimated]);
+
+  return { value, ref };
+}
+
+
+const items = [
+    { id: "students", label: "Students", value: 80000, icon: <Users size={20} /> },
+    { id: "corporate", label: "Corporate Training", value: 20000, icon: <Briefcase size={20} /> },
+    { id: "courses", label: "Courses", value: 50, icon: <BookOpen size={20} /> },
+    { id: "years", label: "Years", value: 37, icon: <Calendar size={20} /> },
+  ];
+
+
+
+
+  // top courses
+  const courseList = [
+  {
+    title: "Artificial Intelligence",
+    image: t1, // Replace with actual image path
+    description:
+      "Unlock the power of Artificial Intelligence through hands-on learning and expert guidance.",
+    link: "#",
+  },
+  {
+    title: "Web Development",
+    image: t3, // Replace with actual image path
+    description:
+      "Unlock the power of Web Development through practical learning and expert-driven mentorship.",
+    link: "#",
+  },
+  {
+    title: "Cyber Security",
+    image: t2, // Replace with actual image path
+    description:
+      "Unlock the power of Cybersecurity through hands-on experience and expert-led guidance.",
+    link: "#",
+  },
+];
+
+// corporat training 
+const cards = [
+  {
+    // bgColor: "#ffffffff", // blue
+    title: "A Structured & flexible program, that cares for you",
+    description:
+      "You begin either as a Beginner, Intermediate, or Advanced learner based on your expertise.",
+    
+  },
+  {
+    // bgColor: "#ffffffff", // purple
+    title: "Be Mentored 1:1 by Experienced Professionals",
+    description:
+      "Get Senior Industry experts as mentors to guide you with mock interviews, career advice, resume review, etc.",
+    
+  },
+  {
+    // bgColor: "#ffffffff", // orange
+    title: "Become Part of a thriving community for life",
+    description:
+      "As part of our extensive alumni community you will find job referral, career advice, life advice, or your future co-founder – all in one place.",
+    
+  },
+];
+
+//  Achieviements
+const awards = [
+  { title: "Best Data Science Program", icon: "Images", logo: "toi.png" },
+  { title: "Best Investment Program", icon: "Images", logo: "et.png" },
+  { title: "Top Full Stack Development Program", icon: "Images", logo: "toi.png" },
+  { title: "Best Data Science Program", icon: "Images", logo: "toi.png" },
+  { title: "Best Data Science Program", icon: "Images", logo: "toi.png" },
+];
+
+
 const Home = () => {
   return (
     <>
-      {/* ===== Top Section ===== */}
+    
  {/* ===== Top Section ===== */}
 <div className="home-container">
   <div className="home-content">
@@ -140,6 +251,98 @@ const Home = () => {
 </Swiper>
     </div>
 
+
+ <MotionConfig reducedMotion="user">
+      <div className="counter-container">
+        {items.map((item) => {
+          const { value, ref } = useCountUpOnView(item.value, 900);
+          return (
+            <div key={item.id} className="counter-card" ref={ref}>
+              <div className="counter-header">
+                <span className="counter-icon">{item.icon}</span>
+                <span className="counter-label">{item.label}</span>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35 }}
+                className="counter-value"
+              >
+                {value.toLocaleString()}
+              </motion.div>
+            </div>
+          );
+        })}
+      </div>
+    </MotionConfig>
+
+<div className="top-course">
+  <h2>Top Courses</h2>
+
+  <div className="courses-wrapper">
+      <div className="courses-container">
+        {courseList.map((course, index) => (
+          <div key={index} className="course">
+            <h3 className="course-title">{course.title}</h3>
+            <img src={course.image} alt={course.title} className="course-image" />
+            <p className="course-description">{course.description}</p>
+            <a href={course.link} className="explore-button">
+              Explore More <ArrowUpRight size={18} />
+            </a>
+          </div>
+        ))}
+      </div>
+      <div className="view-all-wrapper">
+        <a href="#" className="view-all-button">
+          View All Courses <ArrowUpRight size={18} />
+        </a>
+      </div>
+    </div>
+</div>
+
+
+<div className="training"><h2>Corporate Training</h2></div>
+ <div className="info-cards-container">
+      {cards.map((card, index) => (
+        <div key={index} className="info-card">
+          <div
+            className="card-top"
+            // style={{ backgroundColor: card.bgColor }}
+          >
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+          </div>
+          {/* <div className="card-image">
+            <img src={card.image} alt={card.title} />
+          </div> */}
+        </div>
+      ))}
+    </div>
+ 
+{/* Achieviements */}
+
+    <div className="awards-section">
+      <h2 className="awards-title">
+        <span>Our </span> Achievements
+      </h2>
+
+      <div className="awards-icons">
+        {awards.map((award, index) => (
+          <div key={index} className="award-item">
+          <h2> {award.icon} </h2>
+            <p>{award.title}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="awards-logos">
+        {awards.map((award, index) => (
+<h2>
+         
+</h2>
+        ))}
+      </div>
+    </div>
 
     </>
   );
