@@ -218,33 +218,34 @@ const Home = () => {
 
       {/* ===== Courses Slider ===== */}
     <div className="courses-slider">
-      <Swiper
+      <Swiper 
   modules={[Autoplay]}
   spaceBetween={10}
-  slidesPerView={10}
+  slidesPerView={10} // auto width for smooth continuous scroll
   loop={true}
   freeMode={true}
   freeModeMomentum={false}
-  speed={2500} // 3s for a full slide movement
-  allowTouchMove={false} // disables manual drag so it never pauses
+  speed={4000} // slow & smooth
+  allowTouchMove={false}
   autoplay={{
     delay: 0,
-    disableOnInteraction: false, // keep going even if touched
+    disableOnInteraction: false,
     pauseOnMouseEnter: false,
   }}
-  breakpoints={{
-    0: { slidesPerView: 1 },
-    480: { slidesPerView: 2 },
-    768: { slidesPerView: 3 },
-    1024: { slidesPerView: 5 },
-    1280: { slidesPerView: 8 },
-    1480: { slidesPerView: 10 },
+  style={{
+    "--swiper-wrapper-transition-timing-function": "linear", width: "100%"  // <-- Linear easing
   }}
 >
   {repeatedCourses.map((course, index) => (
-    <SwiperSlide key={index}>
+    <SwiperSlide
+      key={index}
+      style={{ width: "150px" }} // fixed card width
+    >
       <div className="course-card">
-        <img src={course.Image} alt={course.title || `Course ${index + 1}`} />
+        <img
+          src={course.Image}
+          alt={course.title || `Course ${index + 1}`}
+        />
       </div>
     </SwiperSlide>
   ))}

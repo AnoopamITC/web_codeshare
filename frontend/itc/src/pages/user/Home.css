@@ -196,8 +196,8 @@
 
 .course-card {
   background: #fff;
-  padding: 5px; /* small padding so image doesn't touch edges */
-  min-height: 100px; /* card height */
+  padding: 5px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,10 +208,10 @@
 }
 
 .course-card img {
-  width: 50%;
-  height: 50%;
-  object-fit:cover; /* keep image proportions */
-  border-radius: 6px;
+  width: 100%;
+  height: auto;
+  max-height: 80px; /* optional */
+  object-fit: contain;
 }
 
 .course-card:hover {
