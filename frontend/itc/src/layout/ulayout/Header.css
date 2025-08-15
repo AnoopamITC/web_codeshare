@@ -197,7 +197,9 @@ body {
   cursor: pointer;
   margin-left: auto;
 }
-
+.search .icsearch{
+padding-left: 150px;
+}
 /* ===== Responsive tweaks ===== */
 @media (max-width: 1200px) {
   .nav-bar { padding: 10px 140px; }
@@ -225,9 +227,74 @@ body {
   }
   .nav-links.show { display: flex; flex-direction: column; }
 }
-.search{
 
+/* Short courses Drop down css */
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
 }
-.search .icsearch{
-padding-left: 150px;
+
+.dropdown-btn {
+  padding: 10px 15px;
+ 
+
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 150%; /* thodu niche */
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr)); /* width ochi */
+  gap: 10px; /* column gap ochi */
+  padding: 10px; /* box padding ochi */
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: top center;
+  transform: translateX(-50%) scaleY(0.95);
+  transition: all 0.25s ease;
+}
+
+/* Show menu on hover */
+.dropdown-container:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-40%) scaleY(1);
+}
+
+.dropdown-column h4 {
+  margin-bottom: 4px;
+  font-size: 15px; /* font thodu small */
+  font-weight: bold;
+  color: #007bff;
+  border-bottom: 1px solid #007bff;  /*line thin*/ 
+   padding-bottom: 3px;
+}
+
+.dropdown-column li {
+  font-size: 13px; /* font thodu small */
+  /* margin-bottom: px; */
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-column li:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
 }

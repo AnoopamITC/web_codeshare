@@ -1,7 +1,7 @@
 import React from 'react';
-import i1 from '@/assets/images/img1.png';
-import i2 from '@/assets/images/img2.png';
-import i3 from '@/assets/images/img3.png';
+import i1 from '@/assets/images/c1.png';
+import i2 from '@/assets/images/c2.png';
+import i3 from '@/assets/images/c3.png';
 import i4 from '@/assets/images/ai.png';
 import i5 from '@/assets/images/c.png';
 import i6 from '@/assets/images/cpp.png';
@@ -20,7 +20,7 @@ import a4 from '@/assets/images/a4.png';
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -84,23 +84,25 @@ const Home = () => {
   </div>
 
   <div className="home-slider">
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={30}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      autoplay={{ delay: 5000, disableOnInteraction: false }}
-      loop={true}
-    >
-      <SwiperSlide><img src={i1} alt="Slide 1" /></SwiperSlide>
-      <SwiperSlide><img src={i2} alt="Slide 2" /></SwiperSlide>
-      <SwiperSlide><img src={i3} alt="Slide 3" /></SwiperSlide>
-    </Swiper>
-  </div>
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        loop={true}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+      >
+        <SwiperSlide><img src={i3} alt="Slide 1" /></SwiperSlide>
+        <SwiperSlide><img src={i2} alt="Slide 2" /></SwiperSlide>
+        <SwiperSlide><img src={i1} alt="Slide 3" /></SwiperSlide>
+      </Swiper>
+    </div>
 </div>
 
-      {/* ===== Below Section ===== */}
+     
 
 
       {/* ===== Courses Slider ===== */}
@@ -112,7 +114,7 @@ const Home = () => {
   loop={true}
   freeMode={true}
   freeModeMomentum={false}
-  speed={5000} // 3s for a full slide movement
+  speed={2500} // 3s for a full slide movement
   allowTouchMove={false} // disables manual drag so it never pauses
   autoplay={{
     delay: 0,

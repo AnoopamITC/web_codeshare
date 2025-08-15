@@ -7,6 +7,112 @@ import {FaSearch} from "react-icons/fa";
 export default function Header() {
   const [isAtTop, setIsAtTop] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const courseData = [
+   {
+    title: "Networking and Cloud Computing",
+    items: [
+      "Networking Fundamentals",
+      "Protocols(TCP/IP, FTP, DNS, VPN)",
+      "A+ (PC Maintenance)",
+      "N+ (Networking)",
+      "MCITP (Microsoft Server)",
+      "CCNA (Cisco certification)",
+      "Virtualization",
+      "AWS Cloud Infrastructure",
+      "Cloud Designing",
+      "Cloud Configuration"
+    ]
+  },
+  {
+    title: "AI",
+    items: [
+      "Machine Learning",
+      "Deep Learning",
+      "Python in AI",
+      "Data Science",
+      "AI Algorithms",
+      "Data Driven Decision",
+      "Natural Language Processing",
+      "AI Ethics"
+    ]
+  },
+  {
+    title: "Programming",
+    items: [
+      "C Programming",
+      "C++ Programming",
+      "SQL",
+      ".NET",
+      "PHP",
+      "JAVA",
+      "Android",
+      "SAD Basics"
+    ]
+  },
+
+  {
+    title: "Hardware",
+    items: [
+      "Hardware Repairing (Motherboard, SMPS, Monitor, Printer)",
+      "Laptop Repairing",
+      "Mobile Repairing",
+      "Home Appliances Repairing",
+      "Electrification",
+      "Structure Cabling",
+      "IoT"
+    ]
+  },
+ {
+    title: "AR/VR",
+    items: [
+      "HTML",
+      "CSS",
+      "3D Animation",
+      "Video Editing",
+      "Graphics Designing",
+      "VFX and Composition",
+      "CAD & CAM",
+      "Engineering Drawing",
+      "2D Drafting",
+      "3D CAD",
+      "3D Modelling",
+      "CAM Development tools"
+    ]
+  },
+    {
+    title: "Accounting",
+    items: [
+      "Tally",
+      "Advances Excel",
+      "Banking",
+      "Taxation",
+      "Costing and Analysis"
+    ]
+  },
+  {
+    title: "Cyber Security",
+    items: [
+      "Kali Linux",
+      "Hacking Attacks",
+      "Cryptography",
+      "Wifi Security",
+      "Keylogger & Malware Analysis",
+      "RHCH (Red Hat Certification)",
+      "End Point Security"
+    ]
+  },
+   {
+    title: "Microsoft Office",
+    items: [
+      "Advance MS Office 365",
+      "IT Infrastructure Utilization",
+      "Office Management Products"
+    ]
+  }
+ 
+];
+ const [open, setOpen] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,16 +174,30 @@ export default function Header() {
           </div>
 
           <Link to="/professionalcourses">Professional Courses</Link>
-           <div className="dropdown">
-          <Link to="/shortcourses">Short Courses</Link>
-            <div className="dropdown-content">
-              <Link to="/careercounselling">Career Counselling</Link>
-              <Link to="/skilldevelopment">Skill Development Program</Link>
-              <Link to="/kidscorner">Kid's Corner</Link>
-              <Link to="/vacationcourses">Vacation Courses</Link>
-              <Link to="/teachercorner">Teacher Corner</Link>
+        <div 
+      className="dropdown-container"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <Link to="/shortcourses" className="dropdown-btn">
+       Short Courses 
+      </Link>
+
+      {open && (
+        <div className="dropdown-menu">
+          {courseData.map((category, index) => (
+            <div key={index} className="dropdown-column">
+              <h4>{category.title}</h4>
+              <ul>
+                {category.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
             </div>
-            </div>
+          ))}
+        </div>
+      )}
+    </div>
              <div className="dropdown">
           <Link to="/aboutus">About us</Link>
           <div className="dropdown-content">
