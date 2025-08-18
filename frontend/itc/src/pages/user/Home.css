@@ -151,27 +151,46 @@
 .home-slider .swiper-slide {
   height: 100%;
 }
-
+.home-slider .swiper-pagination {
+  position: absolute;
+  bottom: -25px !important; /* move dots outside */
+  left: 0;
+  right: 0;
+  text-align: center;
+}
 .home-slider img {
   width: 100%;
   height: 100%;
   object-fit: fill;
   display: block;
 }
+.home-slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #d71920; /* red */
+  opacity: 0.5;
+  margin: 0 6px !important;
+  transition: 0.3s;
+  border-radius: 50%; /* circle */
+}
 
-/* Top slider arrows */
+.home-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+/* Top slider arrows
 .home-slider .swiper-button-next,
 .home-slider .swiper-button-prev {
   width: 35px;
   height: 35px;
-}
+} */
 
-.home-slider .swiper-button-next::after,
+/* .home-slider .swiper-button-next::after,
 .home-slider .swiper-button-prev::after {
   font-size: 22px;
   color: #000;
   font-weight: bold;
-}
+} */
 
 
 /* ===== New Section Below ===== */
@@ -242,7 +261,7 @@ background-repeat: no-repeat;
   flex-wrap: wrap;
   gap: 50px;
   padding: 50px;
-  background-color: #f9fafb;
+  background-color: #f3f3f3;
   /* justify-content: center; */
 }
 
@@ -267,9 +286,12 @@ background-repeat: no-repeat;
   color: #111827;
 }
 
+.counter {
+  background-color: #F5F5F5;
+}
 
 .top-course h2{
-  margin-top: 30px;
+  /* margin-top: 30px; */
 text-align: center;
 color: #06033d;
 }
@@ -364,7 +386,7 @@ color: #06033d;
 
 /*  corporate training */
 .training{
-  background-color: #f9fafb;
+  background-color: #F5F5F5;
 }
 
 .training h2{
@@ -429,6 +451,11 @@ color: #06033d;
       background: #b0151a;
     }
 /*  training card */
+.training{
+
+  background-color: #F5F5F5;
+
+}
 
 .info-cards-container {
   display: flex;
@@ -544,9 +571,6 @@ color: #06033d;
 }
 
 
-.review{
-  background-color: #f9fafb;
-}
 
 /* ===== Footer Spacing Fix ===== */
 body {

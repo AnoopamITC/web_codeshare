@@ -197,7 +197,6 @@ const Home = () => {
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={1}
-        navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop={true}
@@ -284,9 +283,10 @@ const Home = () => {
 </div>
 {/* top courses */}
 <div className="top-course">
-  <h2>Top Courses</h2>
+ 
 
   <div className="courses-wrapper">
+     <h2>Top Courses</h2>
       <div className="courses-container">
         {courseList.map((course, index) => (
           <div key={index} className="course">
