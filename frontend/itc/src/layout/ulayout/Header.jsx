@@ -235,6 +235,7 @@ export default function Header() {
             </div>
           <Link to="/services">Services</Link>
           <Link to="/offers">Offers</Link>
+          <Link>Career Guide</Link>
           <div className="search">
              <button>Search... <span><FaSearch className="icsearch"/> </span></button>
           </div>
