@@ -201,7 +201,7 @@ export default function Header() {
       )}
     </div>
              <div className="dropdown">
-          <Link to="/aboutus">About us</Link>
+          <Link to="/aboutus" className="dropbtn">About us</Link>
           <div className="dropdown-content">
               <Link to="/careercounselling">	Overview</Link>
               <Link to="/skilldevelopment">Vision & Mission</Link>
@@ -212,7 +212,7 @@ export default function Header() {
             </div>
             </div>
              <div className="dropdown">
-          <Link to="/aboutus">Activities</Link>
+          <Link to="/aboutus" className="dropbtn">Activities</Link>
           <div className="dropdown-content">
               <Link to="/careercounselling">		Seminars & Workshops</Link>
               <Link to="/skilldevelopment">	Events & Celebrations</Link>
@@ -222,7 +222,7 @@ export default function Header() {
             </div>
             </div>
              <div className="dropdown">
-          <Link to="/studentcorner">Student Corner</Link>
+          <Link to="/studentcorner" className="dropbtn">Student Corner</Link>
           <div className="dropdown-content">
               <Link to="/careercounselling">	Project</Link>
               <Link to="/skilldevelopment">	Internship</Link>

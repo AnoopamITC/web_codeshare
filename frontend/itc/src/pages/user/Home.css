@@ -273,6 +273,7 @@
   margin-bottom: 12px;
 }
 
+
 .counter-header {
   display: flex;             /* side by side */
   justify-content: center;   /* center them horizontally */
@@ -280,10 +281,12 @@
   gap: 8px;                  /* spacing between icon and text */
 }
 
+
 .counter-icon {
   font-size: 1.5rem;
   color: #444;
 }
+
 
 .counter-label {
   font-size: 1rem;
