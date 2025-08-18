@@ -45,10 +45,10 @@ body {
   width: 100%;
   background-color: #06033d;
   display: flex;
-  
   align-items: center;
   justify-content:end;
-  padding: 8px 40px;
+  padding: 10px 10% 10px 0px;
+
   height: 45px;
   z-index: 100;
   transition: top 0.25s ease, box-shadow 0.25s ease;
@@ -60,7 +60,7 @@ body {
 }
 
 .nav-spacer {
-  height: 60px;
+  height: 0px;
 }
 
 
@@ -78,18 +78,18 @@ body {
 }
 
 .ai-powered-tag {
-  background-color: #03066d; /* Orange color */
+  background-color: #dbdcff; /* Orange color */
   color: white;
   padding: 0 10px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   display: flex;
   align-items: center;
   position: relative;
   /* Position relative is needed for the pseudo-element triangle */
   z-index: 1;
-  margin-top:-32px /* Ensures the tag is above the triangle */
+  margin-top:-12px /* Ensures the tag is above the triangle */
 }
 
 .ai-powered-icon {
@@ -97,19 +97,7 @@ body {
   font-size: 16px; 
 }
 
-.ai-powered-tag::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #03066d; /* Matches the background color of the tag */
-  /* This creates the little triangle at the bottom */
-}
+
 
 /* ===== Floating Frame Logo (in red area) ===== */
 .floating-frame {
@@ -140,7 +128,7 @@ body {
 }
 
 .mini-logo img {
-  height: 30px;
+  height: 55px;
 }
 
 .mini-logo.hidden {
@@ -304,6 +292,9 @@ body {
   font-size: 14px;
   background: white;
   cursor: pointer;
+}
+.search{
+  padding-right: 18px;
 }
 
 .search .icsearch {

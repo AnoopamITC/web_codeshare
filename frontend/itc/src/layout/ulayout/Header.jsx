@@ -242,7 +242,7 @@ export default function Header() {
         
             <span role="img" aria-label="AI brain icon">🧠</span> 
           </span>
-          AI-based
+          AI-Powered
         </span>
       </div>
       <Link>Career Guidance</Link>
