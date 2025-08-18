@@ -363,6 +363,10 @@ color: #06033d;
 
 
 /*  corporate training */
+.training{
+  background-color: #f9fafb;
+}
+
 .training h2{
 text-align: center;
 color: #06033d;
@@ -540,6 +544,10 @@ color: #06033d;
 }
 
 
+.review{
+  background-color: #f9fafb;
+}
+
 /* ===== Footer Spacing Fix ===== */
 body {
   display: flex;
@@ -552,6 +560,8 @@ body {
 main {
   flex: 1;
 }
+
+
 
 /* ===== Responsive ===== */
 

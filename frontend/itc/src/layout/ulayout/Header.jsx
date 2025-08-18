@@ -235,7 +235,18 @@ export default function Header() {
             </div>
           <Link to="/services">Services</Link>
           <Link to="/offers">Offers</Link>
-          <Link>Career Guide</Link>
+        <div className="career-guidance-container">
+      <div className="ai-tag-wrapper">
+        <span className="ai-powered-tag">
+          <span className="ai-powered-icon">
+        
+            <span role="img" aria-label="AI brain icon">🧠</span> 
+          </span>
+          AI-based
+        </span>
+      </div>
+      <Link>Career Guidance</Link>
+    </div>
           <div className="search">
              <button>Search... <span><FaSearch className="icsearch"/> </span></button>
           </div>

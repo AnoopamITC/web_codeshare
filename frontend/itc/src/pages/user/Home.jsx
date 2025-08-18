@@ -347,8 +347,9 @@ const Home = () => {
       </div>
       </div>
 
-
+<div className="review">
 <Testimonial/>
+</div>
     </>
   );
 };
