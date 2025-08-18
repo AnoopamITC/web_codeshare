@@ -357,7 +357,10 @@ color: #06033d;
 
 
 /*  corporate training */
-
+.training h2{
+text-align: center;
+color: #06033d;
+}
     .card-container {
       display: flex;
       gap: 20px;
@@ -488,10 +491,14 @@ color: #06033d;
   margin-bottom: 30px;
 }
 
-.awards-title span {
-  color: #f15a24;
-  border-bottom: 3px solid #f15a24;
+.awards-title .red {
+  color: #d71920;
+  border-bottom: 3px solid #d71920;
   padding-bottom: 3px;
+}
+
+.awards-title .blue{
+ color: #06033d;
 }
 
 .awards-icons {
@@ -533,6 +540,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+
 }
 
 main {
@@ -540,19 +548,22 @@ main {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 1024px) {
-  .courses-slider {
-    padding: 15px 10px;
-  }
 
-  .courses-slider .swiper-button-next,
-  .courses-slider .swiper-button-prev {
-    width: 28px;
-    height: 28px;
-    margin-top: -14px;
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-container {
+    gap: 20px;
+  }
+  .courses-container {
+    gap: 40px !important;
+  }
+  .info-cards-container {
+    height: auto; /* prevent cutoff */
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
@@ -566,45 +577,71 @@ main {
   }
 
   .home-slider {
-    min-height: 300px;
-    padding-right: 0;
+    min-height: 250px;
   }
 
-  .courses-slider {
-    padding: 15px 5px;
-    min-height: 150px;
+  .home-images img {
+    width: 90px;
+    height: auto;
   }
 
-  .courses-slider .swiper-button-next {
-    right: -10px;
+  .courses-container {
+    gap: 20px !important;
   }
 
-  .courses-slider .swiper-button-prev {
-    left: -10px;
+  .course {
+    max-width: 100%;
+    width: 100%;
   }
 
-  .course-card {
-    min-height: 120px;
-    padding: 10px;
+  .info-cards-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .awards-title {
+    font-size: 1.4rem;
   }
 }
 
+/* Extra Small (Phones <480px) */
 @media (max-width: 480px) {
-  .courses-slider {
-    padding: 10px 5px;
-    min-height: 120px;
+  h1 {
+    font-size: 1.5rem;
   }
 
-  .courses-slider .swiper-button-next {
-    right: -8px;
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 18px;
+    font-size: 14px;
   }
 
-  .courses-slider .swiper-button-prev {
-    left: -8px;
+  .home-images img {
+    width: 70px;
+    height: auto;
   }
 
-  .course-card {
-    min-height: 100px;
-    padding: 8px;
+  .course-title {
+    font-size: 1rem;
+  }
+
+  .explore-button,
+  .view-all-button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .counter-card {
+    min-width: 140px;
+  }
+
+  .awards-icons {
+    gap: 15px;
   }
 }

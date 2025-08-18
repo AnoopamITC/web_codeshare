@@ -21,97 +21,74 @@ body {
   display: flex;
   align-items: center;
   justify-content: end;
-  padding: 0 40px;
+  padding: 0 20px;
   height: 45px;
-  position: relative;
   z-index: 5;
 }
 
 .right-section {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .right-section a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
-  padding: 0 10px;
+  font-size: 14px;
 }
 
 /* ===== Blue Navbar (FIXED) ===== */
 .nav-bar {
-  position: fixed;            /* 👈 truly fixed */
-  top: 45px;                  /* sits just below the red top header initially */
-  /* left: 0; */
-  /* right: 0; */
+  position: fixed;
+  top: 45px;
   width: 100%;
   background-color: #e6e6eb;
   display: flex;
+  
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 350px;
-  height: 45px;
+  justify-content:center;
+  padding: 8px 40px;
+  height: 55px;
   z-index: 100;
-  transition: top 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  transition: top 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* When scrolled, top header hides and navbar snaps to very top */
 .nav-bar.scrolled {
   top: 0;
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-  background-color: #e6e6eb; /* keep same, or darken slightly if you want */
 }
 
-/* Reserve space below the fixed navbar so page content doesn't slide under it */
 .nav-spacer {
-  height: 45px; /* equal to .nav-bar height */
+  height: 55px;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  /* margin-left: auto; push links to the right when needed */
-}
-
-.nav-bar a {
-  color: #06033d;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0 15px;
-}
-
-/* ===== Floating Frame Logo (in red area) ===== */
+/* ===== Floating Frame Logo ===== */
 .floating-frame {
   position: absolute;
   top: 0;
-  left: 40px;
+  left: 15px;
   z-index: 200;
 }
 
 .floating-frame img {
-  height: 180px;
-  width: 150px;
-  padding-left: 80px;
+  height: 160px;
+  width: auto;
+  max-width: 140px;
 }
 
-/* ===== Mini Logo inside Blue Bar (only when scrolled) ===== */
+/* ===== Mini Logo inside Blue Bar ===== */
 .mini-logo {
   position: absolute;
-  left: 40px;
+  left: 20px;
   top: 6px;
-  height: 60px;
-  z-index: 101;
-  padding-left: 80px;
+  height: 50px;
   transition: opacity 0.25s ease, transform 0.25s ease;
   pointer-events: none;
 }
 
 .mini-logo img {
-  height: 60px;
+  height: 50px;
 }
 
 .mini-logo.hidden {
@@ -124,18 +101,21 @@ body {
   transform: translateY(0);
 }
 
-.nav-bar button{
-  width: 250px;
-  height: 30px;
-  border-radius: 20px;
-  text-align: left;
-  font-weight: lighter;
+/* ===== Nav Links (Desktop) ===== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
- 
+.nav-links a {
+  color: #06033d;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
 
 /* ===== Dropdown ===== */
-/* Parent container */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -150,7 +130,7 @@ body {
   transition: background 0.3s ease;
 }
 
-/* Dropdown content box */
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -185,61 +165,7 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Smooth fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== Mobile Menu Button ===== */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  color: #06033d;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-}
-.search .icsearch{
-padding-left: 150px;
-}
-/* ===== Responsive tweaks ===== */
-@media (max-width: 1200px) {
-  .nav-bar { padding: 10px 140px; }
-  .mini-logo { left: 20px; padding-left: 40px; }
-}
-
-@media (max-width: 992px) {
-  .nav-bar { padding: 10px 100px; }
-  .nav-links a { margin: 0 10px; }
-}
-
-@media (max-width: 768px) {
-  .nav-bar { padding: 10px 60px; height: 50px; }
-  .nav-spacer { height: 50px; }
-  .menu-toggle { display: block; }
-  .nav-links { 
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #e6e6eb;
-    display: none;
-    padding: 10px 20px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
-  }
-  .nav-links.show { display: flex; flex-direction: column; }
-}
-
-/* Short courses Drop down css */
-
+/* ===== Short Courses Mega Menu ===== */
 .dropdown-container {
   position: relative;
   display: inline-block;
@@ -313,5 +239,126 @@ padding-left: 150px;
 
 .dropdown-column li:hover {
   background-color: #f0f0f0;
-  color: #007bff;
+  color: #030266;
+}
+/* ===== Search Box ===== */
+.search button {
+  width: 220px;
+  height: 34px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 0 15px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.search .icsearch {
+  float: right;
+  font-size: 14px;
+  color: #444;
+}
+
+/* ===== Mobile Menu Button ===== */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #06033d;
+  cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .nav-bar {
+    padding: 2px 2px;
+    justify-content: space-between;
+  }
+
+  /* floating frame size fix */
+  .floating-frame img {
+    height: 100px;
+    max-width: 90px;
+  }
+
+  .mini-logo {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+  /* hide desktop links */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 55px;
+    left: 0;
+    right: 0;
+    background: #f4f5f7;
+    padding: 20px;
+    height: calc(100vh - 55px);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    transform: translateX(0);
+  }
+
+  /* hamburger show */
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+  }
+
+  .search button {
+    width: 100%;
+  }
+
+  /* disable hover dropdowns on mobile */
+  .dropdown-content,
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown.open .dropdown-content,
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content,
+  .dropdown-container:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-content a,
+  .dropdown-column li {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  .dropdown-column h4 {
+    font-size: 14px;
+    border: none;
+    padding: 4px 0;
+  }
+
+  .dropdown-menu {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
 }

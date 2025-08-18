@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import i1 from '@/assets/images/c1.png';
+import i1 from '@/assets/images/itc1.png';
 import i2 from '@/assets/images/c2.png';
 import i3 from '@/assets/images/c3.png';
 import i4 from '@/assets/images/ai.png';
@@ -29,6 +29,8 @@ import 'swiper/css/pagination';
 import './Home.css';
 import { Users, Briefcase, Calendar, BookOpen,  ArrowUpRight } from "lucide-react";
 import { MotionConfig, motion } from "framer-motion";
+import Testimonial from "../../layout/ulayout/Testimonial";
+
 
 // course slider
 const courses = [
@@ -121,13 +123,7 @@ const items = [
 
 // corporat training 
 const cards = [
-  {
-    // bgColor: "#ffffffff", // blue
-    title: "A Structured & flexible program, that cares for you",
-    description:
-      "You begin either as a Beginner, Intermediate, or Advanced learner based on your expertise.",
-    
-  },
+
   {
     // bgColor: "#ffffffff", // purple
     title: "Be Mentored 1:1 by Experienced Professionals",
@@ -253,6 +249,9 @@ const Home = () => {
     </div>
 
 
+
+{/* Counter  */}
+
  <MotionConfig reducedMotion="user">
       <div className="counter-container">
         {items.map((item) => {
@@ -269,7 +268,7 @@ const Home = () => {
                 transition={{ duration: 0.35 }}
                 className="counter-value"
               >
-                {value.toLocaleString()}
+                {value.toLocaleString()}+
               </motion.div>
             </div>
           );
@@ -277,6 +276,7 @@ const Home = () => {
       </div>
     </MotionConfig>
 
+{/* top courses */}
 <div className="top-course">
   <h2>Top Courses</h2>
 
@@ -302,7 +302,11 @@ const Home = () => {
 </div>
 
 
-<div className="training"><h2>Corporate Training</h2></div>
+
+
+{/* Corporate training  */}
+<div className="training">
+  <h2>Corporate Training</h2>
  <div className="info-cards-container">
       {cards.map((card, index) => (
         <div key={index} className="info-card">
@@ -319,12 +323,12 @@ const Home = () => {
         </div>
       ))}
     </div>
- 
+ </div>
 {/* Achieviements */}
 
     <div className="awards-section">
       <h2 className="awards-title">
-        <span>Our </span> Achievements
+        <span className='red'> Our </span> <span className='Blue'>Achievements</span>
       </h2>
 
       <div className="awards-icons">
@@ -335,16 +339,10 @@ const Home = () => {
           </div>
         ))}
       </div>
-
-      <div className="awards-logos">
-        {awards.map((award, index) => (
-<h2>
-         
-</h2>
-        ))}
       </div>
-    </div>
 
+
+<Testimonial/>
     </>
   );
 };

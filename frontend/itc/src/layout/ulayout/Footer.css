@@ -113,89 +113,67 @@ footer {
 
 /* ================= RESPONSIVE ================= */
 
-/* Tablet screens */
+/* ### Tablet */
 @media (max-width: 900px) {
   .footer-container {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .footer-section {
-    flex: 1 1 45%;
-    min-width: unset;
-  }
-
-  .footer-bottom {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-  }
-
-  .social-icons a {
-    margin-left: 8px;
-    font-size: 20px;
-  }
-}
-
-
-/* Mobile screens */
-@media (max-width: 468px) {
-  footer {
-    padding: 30px 15px 15px;
-  }
-
-  .footer-container,
-  .footer-bottom {
-    max-width: 100%;
-    margin: 0;
-    padding: 0 15px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    gap: 20px;
+    gap: 25px;
   }
 
   .footer-section {
     flex: 1 1 100%;
-    text-align: center; /* center text for mobile */
+    max-width: 100%;
+    text-align: center;
   }
 
-  .footer-section h3 {
-    font-size: 16px;
+  .footer-section ul {
+    padding-left: 0;
   }
 
-  /* CONTACTS section vertical layout */
- /* CONTACTS section proper alignment */
-.footer-section:first-child ul li {
-  display: flex;
-  align-items: flex-start; /* aligns icon to top of multi-line text */
-  gap: 8px;
-  font-size: 14px;
-  line-height: 1.5;
+  .footer-section ul li {
+    justify-content: center;
+  }
+
+  .footer-section ul li a {
+    text-align: center;
+  }
 }
 
-/* Optional: adjust icon size if needed */
-.footer-section:first-child ul li svg {
-  flex-shrink: 0;
-  margin-top: 4px; /* fine-tune vertical alignment */
-}
+/* ### Mobile */
+@media (max-width: 468px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-  /* Footer bottom responsive */
+  .footer-section {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .footer-section ul {
+    padding-left: 0;
+  }
+
+  .footer-section ul li {
+    justify-content: center;
+  }
+
+  .footer-section ul li a {
+    text-align: center;
+  }
+
   .footer-bottom {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    align-items: center;
   }
 
   .social-icons {
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-  }
-
-  .social-icons a {
-    margin: 0;
-    font-size: 20px;
-    flex-shrink: 0;
   }
 }

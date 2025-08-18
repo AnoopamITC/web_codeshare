@@ -18,7 +18,7 @@ import Vacationcourses from './pages/user/Vacationcourses';
 import Teacherscorner from './pages/user/Teacherscorner';
 import Dashboard from './pages/admin/Dashboard';
 import ALogin from './pages/admin/ALogin';
-
+// import Testimonial from './layout/ulayout/Testimonial.jsx'
 function App() {
 
 
@@ -40,7 +40,7 @@ function App() {
       <Route path='kidscorner' element={<Mainlayout><Kidscorner /></Mainlayout>} />
       <Route path='vacationcourses' element={<Mainlayout><Vacationcourses /></Mainlayout>} />
       <Route path='teachercorner' element={<Mainlayout><Teacherscorner /></Mainlayout>} />
-
+      {/* <Route path='review' element={<Testimonial/>}/> */}
 
         {/* Admin Routes */}
         <Route path="/admindashboard" element={<Adminlayout><Dashboard/></Adminlayout>} />
