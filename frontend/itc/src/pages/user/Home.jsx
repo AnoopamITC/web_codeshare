@@ -167,6 +167,8 @@ const Home = () => {
     <div className="home-buttons">
       <button className="btn-primary">Explore Courses</button>
       <button className="btn-secondary">Enquire Now</button>
+           <button className="btn-secondary">Explore Courses</button>
+      <button className="btn-secondary">Enquire Now</button>
     </div>
 
     {/* Images row under buttons */}
@@ -252,35 +254,34 @@ const Home = () => {
 
 
 {/* Counter  */}
-<div className="counter">
- <MotionConfig reducedMotion="user">
-      <div className="counter-container">
-        {items.map((item) => {
-          const { value, ref } = useCountUpOnView(item.value, 900);
-          return (
-            <div key={item.id} className="counter-card" ref={ref}>
-              
-               <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.35 }}
-                className="counter-value"
-              >
-                {value.toLocaleString()}+
-              </motion.div><div className="counter-header">
-                <span className="counter-icon">{item.icon}</span>
-                <span className="counter-label">{item.label}</span>
-              </div>
-             
-            </div>
-          );
-        })}
-      </div>
-    </MotionConfig>
-    <div className="img-count">
-      <img src={i1} alt='imge'/>
-    </div>
-</div>
+
+<MotionConfig reducedMotion="user">
+  <div className="counter-container">
+    {items.map((item) => {
+      const { value, ref } = useCountUpOnView(item.value, 900);
+      return (
+        <div key={item.id} className="counter-card" ref={ref}>
+          {/* Number at top */}
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+            className="counter-value"
+          >
+            {value.toLocaleString()}+
+          </motion.div>
+
+          {/* Icon + Text side-by-side */}
+          <div className="counter-header">
+            <span className="counter-icon">{item.icon}</span>
+            <span className="counter-label">{item.label}</span>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</MotionConfig>
+
 {/* top courses */}
 <div className="top-course">
  

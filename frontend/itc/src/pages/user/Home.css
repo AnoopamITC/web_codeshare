@@ -174,10 +174,10 @@
   border-radius: 50%; /* circle */
 }
 
-.home-slider .swiper-pagination-bullet-active {
+/* .home-slider .swiper-pagination-bullet-active {
   opacity: 1;
   transform: scale(1.2);
-}
+} */
 /* Top slider arrows
 .home-slider .swiper-button-next,
 .home-slider .swiper-button-prev {
@@ -185,12 +185,12 @@
   height: 35px;
 } */
 
-/* .home-slider .swiper-button-next::after,
+.home-slider .swiper-button-next::after,
 .home-slider .swiper-button-prev::after {
   font-size: 22px;
   color: #000;
   font-weight: bold;
-} */
+}
 
 
 /* ===== New Section Below ===== */
@@ -243,52 +243,54 @@
 }
 
 /* counter cards  */
-
-.counter{
-  display: flex;
-  justify-content: space-around;
-  background-color: #f9fafb;
-}
-
-.img-count img{
-width: 400px;
-height: 250px;
-background-repeat: no-repeat;
-}
-
 .counter-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-  padding: 50px;
-  background-color: #f3f3f3;
-  /* justify-content: center; */
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.counter-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.counter-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d71920;
+  margin-bottom: 12px;
 }
 
 .counter-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 8px;
-}
-.counter-icon {
-  display: flex;
-  align-items: center;
-}
-.counter-label {
-  font-weight: 500;
-}
-.counter-value {
-  font-size: 28px;
-  font-weight: 600;
-  color: #111827;
+  display: flex;             /* side by side */
+  justify-content: center;   /* center them horizontally */
+  align-items: center;       /* vertical align */
+  gap: 8px;                  /* spacing between icon and text */
 }
 
-.counter {
-  background-color: #F5F5F5;
+.counter-icon {
+  font-size: 1.5rem;
+  color: #444;
 }
+
+.counter-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+ 
 
 .top-course h2{
   /* margin-top: 30px; */
@@ -695,3 +697,4 @@ main {
     gap: 15px;
   }
 }
+
