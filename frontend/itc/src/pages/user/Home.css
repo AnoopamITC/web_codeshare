@@ -1,25 +1,42 @@
 /* ===== Main Flex Container: Left + Right ===== */
 .home-container {
   display: flex;
-  width: 100%;
+
+  width: 88%;
   min-height: 50vh;
   margin-top: 20px;
   gap: 40px;
+  align-items: center;
   padding: 70px 20px;
   box-sizing: border-box;
+}
+.home-main{
+  display: flex;
+  justify-content: center;
 }
 
 /* ===== Left Content ===== */
 .home-content {
-  width: 50%;
-  padding: 20px;
+  width:850px;
+  gap: -10px;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  align-items: start;
+  
+  
+}
+.home-content h1{
+  margin-bottom: 2px;
+}
+.home-content p {
+
 }
 
-.home-content p {
-  margin: 1rem 0;
+.h4c img{
+height: 150px;
+
 }
 
 /* ===== Buttons Container ===== */
@@ -132,9 +149,7 @@
   object-fit:fill;
   border-radius: 5px;
 }
-
-
-/* ===== Right Slider (Top Section) ===== */
+/* ====== Home Slider Container ====== */
 .home-slider {
   margin-top: 20px;
   width: 50%;
@@ -143,54 +158,47 @@
   padding-right: 10px;
 }
 
+/* Swiper main wrapper */
 .home-slider .swiper {
   width: 100%;
   height: 100%;
 }
 
+/* Each slide should fill container */
 .home-slider .swiper-slide {
   height: 100%;
 }
-.home-slider .swiper-pagination {
-  position: absolute;
-  bottom: -25px !important; /* move dots outside */
-  left: 0;
-  right: 0;
-  text-align: center;
-}
+
+/* Images fit properly */
 .home-slider img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover; /* 'fill' ki jagah 'cover' better lagta hai */
   display: block;
 }
+
+/* ====== Pagination (Dots) ====== */
+.home-slider .swiper-pagination {
+  position: relative; /* relative taki image ke andar na aaye */
+  margin-top: 10px;   /* thoda gap image ke neeche */
+  text-align: center;
+}
+
 .home-slider .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background: #d71920; /* red */
+  background: #d71920;
   opacity: 0.5;
   margin: 0 6px !important;
   transition: 0.3s;
-  border-radius: 50%; /* circle */
+  border-radius: 50%;
 }
 
 /* .home-slider .swiper-pagination-bullet-active {
   opacity: 1;
   transform: scale(1.2);
-} */
-/* Top slider arrows
-.home-slider .swiper-button-next,
-.home-slider .swiper-button-prev {
-  width: 35px;
-  height: 35px;
-} */
-
-.home-slider .swiper-button-next::after,
-.home-slider .swiper-button-prev::after {
-  font-size: 22px;
-  color: #000;
-  font-weight: bold;
 }
+
 
 
 /* ===== New Section Below ===== */

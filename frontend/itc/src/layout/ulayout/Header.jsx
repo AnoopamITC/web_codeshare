@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import frameImg from "/wp_1.png"; // big floating logo
-import smallLogo from "/logoframe_itc.jpg"; // smaller version for blue bar
+import smallLogo from "/final2.png"; // smaller version for blue bar
 import { Link } from "react-router-dom";
 import {FaSearch} from "react-icons/fa";
 export default function Header() {
@@ -235,18 +235,6 @@ export default function Header() {
             </div>
           <Link to="/services">Services</Link>
           <Link to="/offers">Offers</Link>
-        <div className="career-guidance-container">
-      <div className="ai-tag-wrapper">
-        <span className="ai-powered-tag">
-          <span className="ai-powered-icon">
-        
-            <span role="img" aria-label="AI brain icon">🧠</span> 
-          </span>
-          AI-Powered
-        </span>
-      </div>
-      <Link>Career Guidance</Link>
-    </div>
           <div className="search">
              <button>Search... <span><FaSearch className="icsearch"/> </span></button>
           </div>

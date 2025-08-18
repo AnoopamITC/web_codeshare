@@ -20,7 +20,7 @@ import a4 from '@/assets/images/a4.png';
 import t1 from "@/assets/images/t1.png"
 import t2 from "@/assets/images/t2.png"
 import t3 from "@/assets/images/t3.png"
-
+import h4c from "@/assets/images/help4career.png"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, FreeMode} from 'swiper/modules';
 import 'swiper/css';
@@ -156,23 +156,32 @@ const Home = () => {
     <>
     
  {/* ===== Top Section ===== */}
-<div className="home-container">
+<div className='home-main'>
+  <div className="home-container">
   <div className="home-content">
-    <h1>Best IT Training at Information Technology Centre</h1>
-    <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+    <h1>Best IT Training at <span style={{color:'#d71920'}}>Information Technology Centre</span></h1>
+    <h3>Empower Your Career with Industry-Focused <span style={{color:'#d71920'}}>IT Courses</span></h3>
     <p>
-  Step into the Future with ITC – Where knowledge meets opportunity. Our practical, job-focused courses equip you with the skills to thrive in today’s digital world.
+At Information Technology Centre (ITC), we believe that the right skills can transform your future.
+Our mission is to bridge the gap between education and industry by offering hands-on training, real-world projects, and career-focused programs.
 
     </p>
+    <div className='hc'></div>
+    <div className='h4c'>
+      <h4 style={{color:'#d71920'}}>HELP US PLAN YOUR CAREER</h4>
+      <h3>Book Your Free Career Session With Experts</h3>
+      <img src={h4c} alt='help4career'/>
+    </div>
+    
     <div className="home-buttons">
       <button className="btn-primary">Explore Courses</button>
       <button className="btn-secondary">Enquire Now</button>
-           <button className="btn-secondary">Explore Courses</button>
-      <button className="btn-secondary">Enquire Now</button>
+           <button className="btn-secondary">Get services</button>
+      <button className="btn-secondary">Latest Offers</button>
     </div>
 
     {/* Images row under buttons */}
- <div className="home-images">
+ {/* <div className="home-images">
   <button className="btn"><span>Academic Partners</span></button>
 
   <div className="image-card">
@@ -190,7 +199,7 @@ const Home = () => {
   <div className="image-card">
     <img src={a4} alt="Partner 4" />
   </div>
-</div>
+</div> */}
 
   </div>
 
@@ -212,6 +221,7 @@ const Home = () => {
     </div>
 </div>
 
+</div>
      
 
 
