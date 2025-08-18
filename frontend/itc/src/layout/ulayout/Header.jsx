@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import frameImg from "/wp_1.png"; // big floating logo
-import smallLogo from "/logoframe_itc.png"; // smaller version for blue bar
+import smallLogo from "/logoframe_itc.jpg"; // smaller version for blue bar
 import { Link } from "react-router-dom";
 import {FaSearch} from "react-icons/fa";
 export default function Header() {

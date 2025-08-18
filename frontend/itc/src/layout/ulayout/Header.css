@@ -47,9 +47,9 @@ body {
   display: flex;
   
   align-items: center;
-  justify-content:center;
+  justify-content:end;
   padding: 8px 40px;
-  height: 55px;
+  height: 45px;
   z-index: 100;
   transition: top 0.25s ease, box-shadow 0.25s ease;
 }
@@ -60,7 +60,7 @@ body {
 }
 
 .nav-spacer {
-  height: 55px;
+  height: 60px;
 }
 
 
@@ -132,7 +132,7 @@ body {
   top: 6px;
   height: 60px;
   z-index: 101;
-  padding-left: 60px;
+  padding-left: 10px;
   transition: opacity 0.25s ease, transform 0.25s ease;
   pointer-events: none;
   display: flex;
