@@ -178,12 +178,20 @@ At Information Technology Centre (ITC), we believe that the right skills can tra
 Our mission is to bridge the gap between education and industry by offering hands-on training, real-world projects, and career-focused programs.
 
     </p>
-    <div className='hc'></div>
-    <div className='h4c'>
-      <h4 style={{color:'#d71920'}}>HELP US PLAN YOUR CAREER</h4>
-      <h3>Book Your Free Career Session With Experts</h3>
-      <img src={h4c} alt='help4career'/>
+   <section class="career-section">
+  <div class="career-box">
+    <div class="career-left">
+      <img src={h4c} alt="Help4Career Logo" />
     </div>
+    <div class="career-right">
+      <h4 class="career-title">Discover Your Perfect Career</h4>
+      <p class="career-subtitle">Book Your AI Career Guidance </p>
+      <a href="https://www.help4career.com/" target='_blank' class="career-btn">Start Now</a>
+    </div>
+    
+  </div>
+</section>
+
     
     <div className="home-buttons">
       <button className="btn-primary">Explore Courses</button>
