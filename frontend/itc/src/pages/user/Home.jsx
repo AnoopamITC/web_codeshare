@@ -2,17 +2,23 @@ import React, { useEffect, useState, useRef } from 'react';
 import i1 from '@/assets/images/itc1.png';
 import i2 from '@/assets/images/c2.png';
 import i3 from '@/assets/images/c3.png';
-import i4 from '@/assets/images/ai.png';
-import i5 from '@/assets/images/c.png';
-import i6 from '@/assets/images/cpp.png';
-import i10 from '@/assets/images/java.png';
-import i11 from '@/assets/images/ml.png';
-import i12 from '@/assets/images/office 365.png';
-import i14 from '@/assets/images/php.png';
-import i15 from '@/assets/images/powerbi.png';
-import i16 from '@/assets/images/python.png';
-import i17 from '@/assets/images/react.png';
-import i18 from '@/assets/images/tally.png';
+import i4 from '@/assets/images/1.jpg';
+import i5 from '@/assets/images/2.jpg';
+import i6 from '@/assets/images/3.jpg';
+import i10 from '@/assets/images/4.jpg';
+import i11 from '@/assets/images/5.jpg';
+import i12 from '@/assets/images/6.jpg';
+import i14 from '@/assets/images/7.jpg';
+import i15 from '@/assets/images/8.jpg';
+import i16 from '@/assets/images/9.jpg';
+import i17 from '@/assets/images/10.jpg';
+import i18 from '@/assets/images/11.jpg';
+import i19 from '@/assets/images/12.jpg';
+import i20 from '@/assets/images/13.jpg';
+import i21 from '@/assets/images/14.jpg';
+import i22 from '@/assets/images/15.jpg';
+import i23 from '@/assets/images/16.jpg';
+import i24 from '@/assets/images/17.jpg';
 import a1 from '@/assets/images/a1.png';
 import a2 from '@/assets/images/a2.png';
 import  a3 from '@/assets/images/a3.jpg';
@@ -36,17 +42,23 @@ import Testimonial from "../../layout/ulayout/Testimonial";
 const courses = [
   { id: 1, title: "Course 1",Image:i4 },
   { id: 2, title: "Course 2",Image:i5 },
-  { id: 3, title: "Course 3",Image:i6 },
-
+  { id: 3, title: "Course 3",Image:i19 },
+  { id: 4, title: "Course 4",Image:i20 },
+  { id: 5, title: "Course 5",Image:i21 },
+  { id: 6, title: "Course 6",Image:i22 },
   { id: 7, title: "Course 7",Image:i10 },
   { id: 8, title: "Course 8",Image:i11 },
   { id: 9, title: "Course 9",Image:i12 },
-
+  { id: 10, title: "Course 10",Image:i23 },
   { id: 11, title: "Course 11",Image:i14 },
   { id: 12, title: "Course 12",Image:i15 },
-  { id: 12, title: "Course 12",Image:i16 },
-  { id: 12, title: "Course 12",Image:i17 },
-  { id: 12, title: "Course 12",Image:i18 },
+  { id: 13, title: "Course 13",Image:i16 },
+  { id: 14, title: "Course 14",Image:i17 },
+  { id: 15, title: "Course 15",Image:i18 },
+  { id: 16, title: "Course 16",Image:i24 },
+  { id: 17, title: "Course 17",Image:i6 },
+
+
 ];
 const repeatedCourses = [...courses, ...courses];
  

@@ -8,14 +8,16 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import "./testimonial.css"; // custom css
-
+import i from '@/assets/images/img1.png'
+import i2 from '@/assets/images/img2.png'
+import i3 from '@/assets/images/img3.png'
 // Dummy testimonial data – replace with your actual data or fetch from API
 const TESTIMONIALS = [
   {
     id: 1,
     name: "Aarav Shah",
     role: "Full‑Stack Developer",
-    avatar: "https://i.pravatar.cc/120?img=67",
+    avatar: i,
     rating: 5,
     text:
       "Super clean UI component! Implementation was quick and performance stayed buttery smooth even with many slides.",
@@ -23,8 +25,8 @@ const TESTIMONIALS = [
   {
     id: 2,
     name: "Kiara Patel",
-    role: "Product Manager",
-    avatar: "https://i.pravatar.cc/120?img=67",
+    role: "AI",
+     avatar: i2,
     rating: 5,
     text:
       "Loved the autoplay with pause‑on‑hover. Also accessible out of the box – keyboard and ARIA done right.",
@@ -32,36 +34,36 @@ const TESTIMONIALS = [
   {
     id: 3,
     name: "Vikram Mehta",
-    role: "UI/UX Designer",
-    avatar: "https://i.pravatar.cc/120?img=67",
-    rating: 4,
+    role: "Office 365",
+ avatar: i3,
+     rating: 4,
     text:
       "Coverflow effect makes the testimonials pop without being distracting. Easy to restyle with Tailwind.",
   },
   {
     id: 4,
     name: "Sara Khan",
-    role: "Marketing Lead",
-    avatar: "https://i.pravatar.cc/120?img=67",
-    rating: 5,
+    role: "Tally",
+ avatar: i,
+     rating: 5,
     text:
       "We plugged our CMS data in and it just worked. No jank, even on mobile.",
   },
   {
     id: 5,
     name: "Devang Joshi",
-    role: "Founder, DevWorks",
-    avatar: "https://i.pravatar.cc/120?img=67",
-    rating: 5,
+    role: "Cyber Security",
+ avatar: i2,
+     rating: 5,
     text:
       "Navigation arrows + pagination dots are a great combo. Code is tiny and production‑ready.",
   },
   {
     id: 6,
     name: "Nisha Raval",
-    role: "QA Engineer",
-    avatar: "https://i.pravatar.cc/120?img=67",
-    rating: 4,
+    role: "Multimedia",
+     avatar: i3,
+     rating: 4,
     text:
       "Tested on low‑end Android; still smooth thanks to Swiper's virtualized rendering.",
   },
@@ -86,7 +88,7 @@ export default function TestimonialCarousel({
     <section className={`testimonial-section ${className}`}>
       <div className="testimonial-container">
         <header className="testimonial-header">
-          <div>
+          <div className="r-title">
             <p className="testimonial-subtitle">What Students Say</p>
             <h2 className="testimonial-title">Testimonials</h2>
           </div>
@@ -114,20 +116,14 @@ export default function TestimonialCarousel({
           }}
           className="testimonial-swiper"
         >
-          {testimonials.map((t) => (
-            <SwiperSlide key={t.id} className="testimonial-slide">
+          {TESTIMONIALS.map((t) => (
+            <SwiperSlide key={t.id}>
               <article className="testimonial-card">
-                <div className="testimonial-user">
-                  <img src={t.avatar} alt={`${t.name} avatar`} className="testimonial-avatar" />
-                  <div>
-                    <h3 className="testimonial-name">{t.name}</h3>
-                    <p className="testimonial-role">{t.role}</p>
-                  </div>
-                </div>
-                <div className="testimonial-stars">
-                  <Stars value={t.rating} />
-                </div>
-                <p className="testimonial-text">{t.text}</p>
+                <img src={t.avatar} alt={t.name} className="testimonial-img" />
+                <h4>{t.role}</h4>
+                <Stars value={t.rating} />
+                <p className="testimonial-text">“{t.text}”</p>
+                <h3 className="testimonial-name">~ {t.name}</h3>
               </article>
             </SwiperSlide>
           ))}

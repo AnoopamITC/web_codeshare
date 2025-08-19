@@ -30,9 +30,7 @@
 .home-content h1{
   margin-bottom: 2px;
 }
-.home-content p {
 
-}
 
 .h4c img{
 height: 150px;
@@ -637,7 +635,10 @@ main {
     width: 90px;
     height: auto;
   }
-
+/* .courses-slider{
+  height: 100px;
+  width: 150px;
+} */
   .courses-container {
     gap: 20px !important;
   }

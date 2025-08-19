@@ -3,7 +3,9 @@ import "./Header.css";
 import frameImg from "/wp_1.png"; // big floating logo
 import smallLogo from "/final2.png"; // smaller version for blue bar
 import { Link } from "react-router-dom";
-import {FaSearch} from "react-icons/fa";
+import {FaSearch,FaDownload,  FaUserGraduate, FaCertificate} from "react-icons/fa";
+import { PiStudentBold } from "react-icons/pi";
+import { AiOutlineForm,AiOutlineDownload  } from "react-icons/ai";   
 export default function Header() {
   const [isAtTop, setIsAtTop] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -133,10 +135,10 @@ export default function Header() {
         </div>
         <div className="top-header">
           <div className="right-section">
-            <Link>Admission</Link>
-            <Link>Download</Link>
-            <Link>Alumni</Link>
-            <Link>Certificate Authentication</Link>
+            <Link><AiOutlineForm className="icon"/>Admission</Link>
+            <Link><AiOutlineDownload className="icon"/>Download</Link>
+            <Link><PiStudentBold className="icons"/>Alumni</Link>
+            <Link><FaCertificate className="icon"/>Certificate Authentication</Link>
           </div>
         </div>
       </header>
@@ -238,6 +240,15 @@ export default function Header() {
           <div className="search">
              <button>Search... <span><FaSearch className="icsearch"/> </span></button>
           </div>
+  {/* <button className="cta-wrapper">
+  Need Clarity?
+  <span className="cta-link">Drop Your Question</span>
+</button> */}
+  <Link className="cta-wrapper">
+  Need Clarity?
+  <span className="cta-link">Drop Your Question</span>
+</Link>
+
         </div>
        
       </nav>

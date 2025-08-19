@@ -21,14 +21,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: end;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   height: 45px;
   z-index: 5;
 }
 
 .right-section {
   display: flex;
-  gap: 12px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -38,6 +38,17 @@ body {
   font-size: 14px;
 }
 
+.right-section .icon{
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;  
+}
+.right-section .icons{
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;  
+ 
+}
 /* ===== Blue Navbar (FIXED) ===== */
 .nav-bar {
   position: fixed;
@@ -64,38 +75,6 @@ body {
 }
 
 
-.career-guidance-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  /* Add other styling for spacing and layout if needed */
-}
-
-.ai-tag-wrapper {
-  position: relative;
-  /* This wrapper is needed to position the tag correctly above the text */
-}
-
-.ai-powered-tag {
-  background-color: #dbdcff; /* Orange color */
-  color: white;
-  padding: 0 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  position: relative;
-  /* Position relative is needed for the pseudo-element triangle */
-  z-index: 1;
-  margin-top:-12px /* Ensures the tag is above the triangle */
-}
-
-.ai-powered-icon {
-  margin-right: 5px;
-  font-size: 16px; 
-}
 
 
 
@@ -110,17 +89,17 @@ body {
 .floating-frame img {
   height: 180px;
   width: 150px;
-  padding-left: 80px;
+  padding-left: 0;
 }
 
 /* ===== Mini Logo inside Blue Bar (only when scrolled) ===== */
 .mini-logo {
   position: absolute;
   left: 40px;
-  top: 6px;
+  /* top: 6px; */
   height: 60px;
   z-index: 101;
-  padding-left: 80px;
+  /* padding-left: 0px; */
   transition: opacity 0.25s ease, transform 0.25s ease;
   pointer-events: none;
   display: flex;
@@ -128,7 +107,7 @@ body {
 }
 
 .mini-logo img {
-  height: 55px;
+  height: 65px;
 }
 
 .mini-logo.hidden {
@@ -145,7 +124,7 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
 }
 
 .nav-links a {
@@ -205,6 +184,41 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+
+
+/* wrapper link (first line) */
+.cta-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #03066d;       /* blue for first line */
+  font-weight: 800;
+  /* font-size: clamp(16px, 2.2vw, 28px); */
+  line-height: 1.2;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+ 
+.cta-wrapper button{
+  height: 150px;
+  width: 200px;
+  
+
+}
+
+/* second line (span) */
+.cta-link {
+  display: block;
+  color: #d71920;       /* red for second line */
+  font-weight: 450;
+  /* font-size: clamp(14px, 1.6vw, 18px); */
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+
 /* ===== Short Courses Mega Menu ===== */
 .dropdown-container {
   position: relative;
@@ -283,8 +297,8 @@ body {
 }
 /* ===== Search Box ===== */
 .search button {
-  width: 220px;
-  height: 34px;
+  width: 180px;
+  height: 30px;
   border-radius: 20px;
   border: 1px solid #ccc;
   text-align: left;
@@ -309,7 +323,7 @@ body {
   font-size: 26px;
   background: none;
   border: none;
-  color: #06033d;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -342,6 +356,7 @@ body {
     left: 0;
     right: 0;
     background: #f4f5f7;
+ 
     padding: 20px;
     height: calc(100vh - 55px);
     overflow-y: auto;
