@@ -178,6 +178,12 @@ At Information Technology Centre (ITC), we believe that the right skills can tra
 Our mission is to bridge the gap between education and industry by offering hands-on training, real-world projects, and career-focused programs.
 
     </p>
+     <div className="home-buttons">
+      <button className="btn-primary">Explore Courses</button>
+      <button className="btn-secondary">Enquire Now</button>
+           <button className="btn-secondary">Get services</button>
+      <button className="btn-secondary">Latest Offers</button>
+    </div>
    <section class="career-section">
   <div class="career-box">
     <div class="career-left">
@@ -185,7 +191,7 @@ Our mission is to bridge the gap between education and industry by offering hand
     </div>
     <div class="career-right">
       <h4 class="career-title">Discover Your Perfect Career</h4>
-      <p class="career-subtitle">Book Your AI Career Guidance </p>
+      <p class="career-subtitle">A step-by-step approach to tackle every aspect of career selection and planning</p>
       <a href="https://www.help4career.com/" target='_blank' class="career-btn">Start Now</a>
     </div>
     
@@ -193,12 +199,7 @@ Our mission is to bridge the gap between education and industry by offering hand
 </section>
 
     
-    <div className="home-buttons">
-      <button className="btn-primary">Explore Courses</button>
-      <button className="btn-secondary">Enquire Now</button>
-           <button className="btn-secondary">Get services</button>
-      <button className="btn-secondary">Latest Offers</button>
-    </div>
+   
 
     {/* Images row under buttons */}
  {/* <div className="home-images">

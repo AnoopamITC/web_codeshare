@@ -140,6 +140,10 @@ export default function Header() {
             <Link><PiStudentBold className="icons"/>Alumni</Link>
             <Link><FaCertificate className="icon"/>Certificate Authentication</Link>
           </div>
+            <Link className="cta-wrapper">
+  Need Clarity?
+  <span className="cta-link">Drop Your Question</span>
+</Link>
         </div>
       </header>
 
@@ -244,10 +248,7 @@ export default function Header() {
   Need Clarity?
   <span className="cta-link">Drop Your Question</span>
 </button> */}
-  <Link className="cta-wrapper">
-  Need Clarity?
-  <span className="cta-link">Drop Your Question</span>
-</Link>
+
 
         </div>
        
