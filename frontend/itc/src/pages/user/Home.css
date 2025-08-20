@@ -12,13 +12,15 @@
 }
 .home-main{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+
+  /* margin-right:70px ; */
 }
 
 /* ===== Left Content ===== */
 .home-content {
   width:850px;
-  gap: -10px;
+  /* gap: -10px; */
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -31,9 +33,9 @@
   margin-bottom: 2px;
 }
 
-/* .home-content p {
-
-} */
+.home-content p{
+  margin-top: -5px;
+}
 
 .h4c img{
 height: 150px;
@@ -152,11 +154,12 @@ height: 150px;
 }
 /* ====== Home Slider Container ====== */
 .home-slider {
-  margin-top: 20px;
+  margin-top: 40px;
   width: 50%;
-  height: 350px;
+  height: 550px;
   min-height: 50vh;
-  padding-right: 10px;
+  /* margin-left: 200px; */
+  /* padding-right: 10px; */
 }
 
 /* Swiper main wrapper */
@@ -180,22 +183,22 @@ height: 150px;
 
 /* ====== Pagination (Dots) ====== */
 .home-slider .swiper-pagination {
-  position: relative; /* relative taki image ke andar na aaye */
-  margin-top: 10px;   /* thoda gap image ke neeche */
-  text-align: center;
+  position:absolute !important; /* relative taki image ke andar na aaye */
+  /* margin-top: px;   thoda gap image ke neeche */
+  text-align:center;
 }
 
 .home-slider .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #d71920;
+  width: 10px;
+  height: 10px;
+  background: #000000;
   opacity: 0.5;
   margin: 0 6px !important;
   transition: 0.3s;
   border-radius: 50%;
 }
 
-/* .home-slider .swiper-pagination-bullet-active {
+ .home-slider .swiper-pagination-bullet-active {
   opacity: 1;
   transform: scale(1.2);
 }
@@ -217,7 +220,7 @@ height: 150px;
 .courses-slider {
   width: 100%;
   padding: 20px 10px;
-  margin-top: 10px;
+  margin-top: -30px;
   box-sizing: border-box;
   position: relative;
   min-height: 180px;
@@ -603,13 +606,14 @@ main {
   display: flex;
   justify-content: center;
   margin: 10px 0;
-  padding: 0 20px;
+  margin-top: 50px;
+  
 }
 
 .career-box {
   display: flex;
   align-items: center;
-  height: 150px;
+  height: 180px;
   width: 650px;
   background: linear-gradient(135deg, #f9f9f9 60%, #e3f2fd 100%);
   border-radius: 25px;
@@ -638,8 +642,9 @@ main {
 }
 
 .career-left img{
-  width: 110px;
-  margin-bottom: 10px;
+  width: 150px;
+  margin-top: 30px;
+  height: 120px;
 }
 
 .career-brand {

@@ -6,9 +6,12 @@ import { Link } from "react-router-dom";
 import {FaSearch,FaDownload,  FaUserGraduate, FaCertificate} from "react-icons/fa";
 import { PiStudentBold } from "react-icons/pi";
 import { AiOutlineForm,AiOutlineDownload  } from "react-icons/ai";   
+import SearchBox from "./Search.jsx";
 export default function Header() {
   const [isAtTop, setIsAtTop] = useState(true);
+  const [showRed, setShowRed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+    const [active, setActive] = useState(false);
   const courseData = [
    {
     title: "Networking and Cloud Computing",
@@ -128,24 +131,61 @@ export default function Header() {
 
   return (
     <>
-      {/* Red Top Header + Floating Logo (hides on scroll) */}
-      <header className={`header-wrapper ${isAtTop ? "" : "hide"}`}>
-        <div className="floating-frame">
-          <img src={frameImg} alt="Logo Frame" />
+     
+
+
+
+      <header className={`header-wrapper ${isAtTop ? "" : "hide"} ${showRed?"hover-show":""}`}
+      onMouseEnter={()=> setShowRed(true)}
+      onMouseLeave={()=> setShowRed(false)}>
+  <div className="floating-frame">
+    <img src={frameImg} alt="Logo Frame" />
+  </div>
+
+  <div className="top-header">
+    <div className="header-inner">
+      {/* Left side title */}
+      <div className="textitc">
+        <Link className="brand-rank">#1</Link>
+        <div className="brand-text">
+          <Link>
+            Computer Training & <br />
+            <span className="cta-link">Development Centre</span>
+          </Link>
         </div>
-        <div className="top-header">
-          <div className="right-section">
-            <Link><AiOutlineForm className="icon"/>Admission</Link>
-            <Link><AiOutlineDownload className="icon"/>Download</Link>
-            <Link><PiStudentBold className="icons"/>Alumni</Link>
-            <Link><FaCertificate className="icon"/>Certificate Authentication</Link>
-          </div>
-            <Link className="cta-wrapper">
-  Need Clarity?
-  <span className="cta-link">Drop Your Question</span>
-</Link>
-        </div>
-      </header>
+      </div>
+
+      {/* Right side menu */}
+      <div className="cont">
+        <Link>Admission</Link>
+        <Link>Download</Link>
+        <Link>Alumni</Link>
+        <Link>Certificate Authentication</Link>
+        <Link className="cta-wrapper">
+          Need Clarity?
+          <span className="cta-link">Drop Your Question</span>
+        </Link>
+         <div className="actions">
+        {!active && (
+          <FaSearch
+            className="icsearch"
+            onClick={() => setActive(true)}   // ✅ correct setter
+          />
+        )}
+        {active && (
+          <SearchBox
+            open={active}                  // ✅ prop name match
+            setOpen={setActive}            // ✅ correct setter passed
+            onSearch={(q) => console.log("Searching:", q)}
+          />
+        )}
+      </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
 
       {/* Blue Navbar - FIXED (stays on top while scrolling) */}
       <nav className={`nav-bar ${isAtTop ? "" : "scrolled"}`}>
@@ -173,6 +213,16 @@ export default function Header() {
               School Courses
             </Link>
             <div className="dropdown-content">
+                <div className="dropdown-left">
+      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <p>
+        At Information Technology Centre (ITC), we believe that the right skills
+        can transform your future. Our mission is to bridge the gap between
+        education and industry by offering hands-on training, real-world
+        projects, and career-focused programs.
+      </p>
+    </div>
+<div className="dropdown-right">
               <Link to="/careercounselling">Career Counselling</Link>
               <Link to="/skilldevelopment">Skill Development Program</Link>
               <Link to="/kidscorner">Kid's Corner</Link>
@@ -180,7 +230,7 @@ export default function Header() {
               <Link to="/teachercorner">Teacher Corner</Link>
             </div>
           </div>
-
+</div>
           <Link to="/professionalcourses">Professional Courses</Link>
         <div 
       className="dropdown-container"
@@ -206,20 +256,45 @@ export default function Header() {
         </div>
       )}
     </div>
-             <div className="dropdown">
-          <Link to="/aboutus" className="dropbtn">About us</Link>
-          <div className="dropdown-content">
-              <Link to="/careercounselling">	Overview</Link>
-              <Link to="/skilldevelopment">Vision & Mission</Link>
-              <Link to="/kidscorner">	Leadership</Link>
-              <Link to="/vacationcourses">	Infrastructure</Link>
-              <Link to="/vacationcourses">Achievements & Milestone</Link>
-              <Link to="/teachercorner">	Gallery</Link>
-            </div>
-            </div>
+           <div className="dropdown">
+  <Link to="/aboutus" className="dropbtn">About us</Link>
+
+  <div className="dropdown-content">
+    {/* Left side content */}
+    <div className="dropdown-left">
+      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <p>
+        At Information Technology Centre (ITC), we believe that the right skills
+        can transform your future. Our mission is to bridge the gap between
+        education and industry by offering hands-on training, real-world
+        projects, and career-focused programs.
+      </p>
+    </div>
+
+    {/* Right side links */}
+    <div className="dropdown-right">
+      <Link to="/careercounselling">Overview</Link>
+      <Link to="/skilldevelopment">Vision & Mission</Link>
+      <Link to="/kidscorner">Leadership</Link>
+      <Link to="/vacationcourses">Infrastructure</Link>
+      <Link to="/vacationcourses">Achievements & Milestone</Link>
+      <Link to="/teachercorner">Gallery</Link>
+    </div>
+  </div>
+</div>
              <div className="dropdown">
           <Link to="/aboutus" className="dropbtn">Activities</Link>
           <div className="dropdown-content">
+             <div className="dropdown-left">
+      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <p>
+        At Information Technology Centre (ITC), we believe that the right skills
+        can transform your future. Our mission is to bridge the gap between
+        education and industry by offering hands-on training, real-world
+        projects, and career-focused programs.
+      </p>
+    </div>
+<div className="dropdown-right">
               <Link to="/careercounselling">		Seminars & Workshops</Link>
               <Link to="/skilldevelopment">	Events & Celebrations</Link>
               <Link to="/kidscorner">		Student Achievements</Link>
@@ -227,9 +302,22 @@ export default function Header() {
               <Link to="/teachercorner">	News & Updates</Link>
             </div>
             </div>
+            </div>
+
+
              <div className="dropdown">
           <Link to="/studentcorner" className="dropbtn">Student Corner</Link>
           <div className="dropdown-content">
+              <div className="dropdown-left">
+      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <p>
+        At Information Technology Centre (ITC), we believe that the right skills
+        can transform your future. Our mission is to bridge the gap between
+        education and industry by offering hands-on training, real-world
+        projects, and career-focused programs.
+      </p>
+    </div>
+<div className="dropdown-right">
               <Link to="/careercounselling">	Project</Link>
               <Link to="/skilldevelopment">	Internship</Link>
               <Link to="/kidscorner">	Placement</Link>
@@ -239,11 +327,10 @@ export default function Header() {
               <Link to="/teachercorner">Wellness & Guidance / Counselling corner</Link>
             </div>
             </div>
-          <Link to="/services">Services</Link>
-          <Link to="/offers">Offers</Link>
-          <div className="search">
-             <button>Search... <span><FaSearch className="icsearch"/> </span></button>
-          </div>
+            </div>
+          <Link to="/services" >Services</Link>
+          <Link to="/offers" >Offers</Link>
+         
   {/* <button className="cta-wrapper">
   Need Clarity?
   <span className="cta-link">Drop Your Question</span>

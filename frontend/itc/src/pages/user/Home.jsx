@@ -28,7 +28,7 @@ import t2 from "@/assets/images/t2.png"
 import t3 from "@/assets/images/t3.png"
 import h4c from "@/assets/images/help4career.png"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, FreeMode} from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, FreeMode, EffectFade} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -64,26 +64,32 @@ const repeatedCourses = [...courses, ...courses];
  
 
 // counter 
-function useCountUpOnView(target, durationMs = 10000) {
+
+function useCountUpOnView(target, durationMs = 2000) {
   const [value, setValue] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
+          if (entry.isIntersecting) {
+            // reset counter every time
             const start = performance.now();
-            let raf = 0;
+            let raf;
+
             const tick = (now) => {
               const t = Math.min(1, (now - start) / durationMs);
               setValue(Math.round(target * t));
               if (t < 1) raf = requestAnimationFrame(tick);
             };
+
             raf = requestAnimationFrame(tick);
+
             return () => cancelAnimationFrame(raf);
+          } else {
+            // 👇 reset to 0 when out of view
+            setValue(0);
           }
         });
       },
@@ -92,11 +98,10 @@ function useCountUpOnView(target, durationMs = 10000) {
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [target, durationMs, hasAnimated]);
+  }, [target, durationMs]);
 
   return { value, ref };
 }
-
 
 const items = [
    { id: "years", label: "Years", value: 37, icon: <Calendar size={20} /> },
@@ -191,7 +196,7 @@ Our mission is to bridge the gap between education and industry by offering hand
     </div>
     <div class="career-right">
       <h4 class="career-title">Discover Your Perfect Career</h4>
-      <p class="career-subtitle">A step-by-step approach to tackle every aspect of career selection and planning</p>
+      <p class="career-subtitle">AI-based counselling that helps you explore opportunities, plan effectively, and achieve your dream career.</p>
       <a href="https://www.help4career.com/" target='_blank' class="career-btn">Start Now</a>
     </div>
     
@@ -199,7 +204,7 @@ Our mission is to bridge the gap between education and industry by offering hand
 </section>
 
     
-   
+    
 
     {/* Images row under buttons */}
  {/* <div className="home-images">
@@ -230,10 +235,9 @@ Our mission is to bridge the gap between education and industry by offering hand
         spaceBetween={30}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
         loop={true}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
+    
       >
         <SwiperSlide><img src={i3} alt="Slide 1" /></SwiperSlide>
         <SwiperSlide><img src={i2} alt="Slide 2" /></SwiperSlide>
