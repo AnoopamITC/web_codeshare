@@ -184,7 +184,7 @@ Our mission is to bridge the gap between education and industry by offering hand
 
     </p>
      <div className="home-buttons">
-      <button className="btn-primary">Explore Courses</button>
+      <button className="btn-secondary">Explore Courses</button>
       <button className="btn-secondary">Enquire Now</button>
            <button className="btn-secondary">Get services</button>
       <button className="btn-secondary">Latest Offers</button>
@@ -266,6 +266,12 @@ Our mission is to bridge the gap between education and industry by offering hand
     disableOnInteraction: false,
     pauseOnMouseEnter: false,
   }}
+   breakpoints={{
+        320: { slidesPerView: 4}, // small screen
+        640: { slidesPerView: 5 },
+        1024: { slidesPerView: 6 },
+        1440: { slidesPerView: 10 }, // big screen
+      }}
   style={{
     "--swiper-wrapper-transition-timing-function": "linear", // <-- Linear easing
   }}

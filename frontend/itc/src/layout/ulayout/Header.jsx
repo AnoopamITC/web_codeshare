@@ -3,7 +3,7 @@ import "./Header.css";
 import frameImg from "/wp_1.png"; // big floating logo
 import smallLogo from "/final2.png"; // smaller version for blue bar
 import { Link } from "react-router-dom";
-import {FaSearch,FaDownload,  FaUserGraduate, FaCertificate} from "react-icons/fa";
+import {FaSearch,FaDownload,  FaUserGraduate, FaCertificate, FaChevronRight} from "react-icons/fa";
 import { PiStudentBold } from "react-icons/pi";
 import { AiOutlineForm,AiOutlineDownload  } from "react-icons/ai";   
 import SearchBox from "./Search.jsx";
@@ -148,9 +148,9 @@ export default function Header() {
       <div className="textitc">
         <Link className="brand-rank">#1</Link>
         <div className="brand-text">
-          <Link>
+          <Link> <span className="cta-link">
             Computer Training & <br />
-            <span className="cta-link">Development Centre</span>
+           Development Centre</span>
           </Link>
         </div>
       </div>
@@ -161,10 +161,8 @@ export default function Header() {
         <Link>Download</Link>
         <Link>Alumni</Link>
         <Link>Certificate Authentication</Link>
-        <Link className="cta-wrapper">
-          Need Clarity?
-          <span className="cta-link">Drop Your Question</span>
-        </Link>
+        <button className="search">Search...<FaSearch className="icsearch"/></button>
+        {/* 
          <div className="actions">
         {!active && (
           <FaSearch
@@ -179,7 +177,7 @@ export default function Header() {
             onSearch={(q) => console.log("Searching:", q)}
           />
         )}
-      </div>
+      </div> */}
 
       </div>
     </div>
@@ -231,31 +229,146 @@ export default function Header() {
             </div>
           </div>
 </div>
-          <Link to="/professionalcourses">Professional Courses</Link>
-        <div 
-      className="dropdown-container"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
-      <Link to="/shortcourses" className="dropdown-btn">
+          <div className="dropdown">
+            <Link to="/schoolcourses" className="dropbtn">
+             Professional Courses
+            </Link>
+            <div className="dropdown-content">
+                <div className="dropdown-left">
+      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <p>
+        At Information Technology Centre (ITC), we believe that the right skills
+        can transform your future. Our mission is to bridge the gap between
+        education and industry by offering hands-on training, real-world
+        projects, and career-focused programs.
+      </p>
+    </div>
+<div className="dropdown-right">
+              <Link to="/careercounselling">Career Counselling</Link>
+              <Link to="/skilldevelopment">Skill Development Program</Link>
+              <Link to="/kidscorner">Kid's Corner</Link>
+              <Link to="/vacationcourses">Vacation Courses</Link>
+              <Link to="/teachercorner">Teacher Corner</Link>
+            </div>
+          </div>
+</div>
+          
+     
+           <div className="dropdown">
+   
+<Link to="/shortcourses" className="dropdown-btn">
        Short Courses 
       </Link>
-
-      {open && (
-        <div className="dropdown-menu">
-          {courseData.map((category, index) => (
-            <div key={index} className="dropdown-column">
-              <h4>{category.title}</h4>
-              <ul>
-                {category.items.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      )}
+   
+      <div className="dropdown-content">
+                <div className="dropdown-left">
+      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <p>
+        At Information Technology Centre (ITC), we believe that the right skills
+        can transform your future. Our mission is to bridge the gap between
+        education and industry by offering hands-on training, real-world
+        projects, and career-focused programs.
+      </p>
     </div>
+<div className="dropdown-right">
+
+
+  <div className="sub-drop">
+              <Link to="/careercounselling" style={{fontSize:'16px',fontWeight:'600'}}>AI <FaChevronRight size={10}/></Link>
+              <div className="main-sub">
+            <Link>c </Link>
+            <Link>c++ </Link>
+            <Link>java </Link>
+            <Link>python </Link>
+            <Link>react </Link>
+            <Link>html </Link>
+            </div>
+           </div>
+  <div className="sub-drop">
+              <Link to="/careercounselling"style={{fontSize:'16px',fontWeight:'600'}}>Programming <FaChevronRight size={10}/></Link>
+              <div className="main-sub">
+            <Link>c </Link>
+            <Link>c++ </Link>
+            <Link>java </Link>
+            <Link>python </Link>
+            <Link>react </Link>
+            <Link>html </Link>
+            </div>
+           </div>
+  <div className="sub-drop">
+              <Link to="/careercounselling"style={{fontSize:'16px',fontWeight:'600'}}>Hardware <FaChevronRight size={10}/></Link>
+              <div className="main-sub">
+            <Link>c </Link>
+            <Link>c++ </Link>
+            <Link>java </Link>
+            <Link>python </Link>
+            <Link>react </Link>
+            <Link>html </Link>
+            </div>
+           </div>
+  <div className="sub-drop">
+              <Link to="/careercounselling"style={{fontSize:'16px',fontWeight:'600'}}>AR/VR <FaChevronRight size={10}/></Link>
+              <div className="main-sub">
+            <Link>c </Link>
+            <Link>c++ </Link>
+            <Link>java </Link>
+            <Link>python </Link>
+            <Link>react </Link>
+            <Link>html </Link>
+            </div>
+           </div>
+  <div className="sub-drop">
+              <Link to="/careercounselling"style={{fontSize:'16px',fontWeight:'600'}}>Accounting <FaChevronRight size={10}/></Link>
+              <div className="main-sub">
+            <Link>c </Link>
+            <Link>c++ </Link>
+            <Link>java </Link>
+            <Link>python </Link>
+            <Link>react </Link>
+            <Link>html </Link>
+            </div>
+           </div>
+  <div className="sub-drop">
+              <Link to="/careercounselling"style={{fontSize:'16px',fontWeight:'600'}}>Cyber Security <FaChevronRight size={10}/></Link>
+              <div className="main-sub">
+            <Link>c </Link>
+            <Link>c++ </Link>
+            <Link>java </Link>
+            <Link>python </Link>
+            <Link>react </Link>
+            <Link>html </Link>
+            </div>
+           </div>
+  <div className="sub-drop">
+              <Link to="/careercounselling"style={{fontSize:'16px',fontWeight:'600'}}>Microsoft Office <FaChevronRight size={10}/></Link>
+              <div className="main-sub">
+            <Link>c </Link>
+            <Link>c++ </Link>
+            <Link>java </Link>
+            <Link>python </Link>
+            <Link>react </Link>
+            <Link>html </Link>
+            </div>
+           </div>
+  <div className="sub-drop">
+              <Link to="/careercounselling"style={{fontSize:'16px',fontWeight:'600'}}>Networking and Cloud Computing <FaChevronRight size={10}/></Link>
+              <div className="main-sub">
+            <Link>c </Link>
+            <Link>c++ </Link>
+            <Link>java </Link>
+            <Link>python </Link>
+            <Link>react </Link>
+            <Link>html </Link>
+            </div>
+           </div>
+
+
+
+            </div>
+          </div>
+          </div>
+
+ 
            <div className="dropdown">
   <Link to="/aboutus" className="dropbtn">About us</Link>
 
@@ -287,6 +400,7 @@ export default function Header() {
           <div className="dropdown-content">
              <div className="dropdown-left">
       <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+   
       <p>
         At Information Technology Centre (ITC), we believe that the right skills
         can transform your future. Our mission is to bridge the gap between
@@ -337,8 +451,8 @@ export default function Header() {
 </button> */}
 
 
-        </div>
        
+        </div>
       </nav>
 
       {/* Spacer so content doesn't hide behind the FIXED navbar */}

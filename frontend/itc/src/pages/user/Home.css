@@ -177,7 +177,7 @@ height: 150px;
 .home-slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 'fill' ki jagah 'cover' better lagta hai */
+  /* object-fit: cover; 'fill' ki jagah 'cover' better lagta hai */
   display: block;
 }
 
@@ -615,7 +615,7 @@ main {
   align-items: center;
   height: 180px;
   width: 650px;
-  background: linear-gradient(135deg, #f9f9f9 60%, #e3f2fd 100%);
+  background: linear-gradient(135deg, #e3f2fd 60%, #e3f2fd 100%);
   border-radius: 25px;
   padding: 20px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
@@ -731,28 +731,65 @@ main {
   .home-slider {
     width: 100%;
   }
-
-  .home-slider {
-    min-height: 250px;
+.home-buttons{
+  display: grid;
+  grid-template-columns: repeat(2,1fr)
+}
+  .career-box {
+    flex-direction: column;
+    text-align: center;
+    
+    width: 300px;
+    height: 150px;
   }
 
-  .home-images img {
-    width: 90px;
-    height: auto;
+  .career-left img {
+    margin-top: -30px;
+    width: 70px;
+    height: 70px;
   }
-/* .courses-slider{
-  height: 100px;
-  width: 150px;
-} */
+
+  .career-title {
+    font-size: 14px;
+    margin-top: -10px;
+  }
+
+  .career-subtitle {
+    font-size: 12px;
+  }
+.career-btn{
+  width: 100px;
+  height: 15px;
+}
+.career-right a{
+  align-items: center;
+}
+
+  .home-slider .swiper{
+   height: 30% ;
+   width: 100%;
+   
+  }
+ 
+
+.courses-slider{
+ margin-top: -400px;
+  
+}
   .courses-container {
-    gap: 20px !important;
+    /* margin-top: 100px; */
+    gap: 10px !important;
+  }
+  .counter-container{
+      display: grid;
+  grid-template-columns: repeat(2,1fr)
   }
  .counter-value {
-    font-size: 1.6rem;
+    font-size: 18px;
   }
 
   .counter-label {
-    font-size: 0.9rem;
+    font-size: 16px;
   }
 
   .img-count img {
