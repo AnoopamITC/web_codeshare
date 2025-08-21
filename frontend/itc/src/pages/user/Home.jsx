@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import i1 from '@/assets/images/itc1.png';
-import i2 from '@/assets/images/c2.png';
-import i3 from '@/assets/images/c3.png';
+import i2 from '@/assets/images/s1.png';
+import i3 from '@/assets/images/s3.png';
 import i4 from '@/assets/images/1.jpg';
 import i5 from '@/assets/images/2.jpg';
 import i6 from '@/assets/images/3.jpg';
@@ -23,6 +23,11 @@ import a1 from '@/assets/images/a1.png';
 import a2 from '@/assets/images/a2.png';
 import  a3 from '@/assets/images/a3.jpg';
 import a4 from '@/assets/images/a4.png';
+import ai1 from '@/assets/images/a1.jpg'
+import ai2 from '@/assets/images/a2.jpg'
+import ai3 from '@/assets/images/a5.jpg'
+import ai4 from '@/assets/images/a6.jpg'
+import ai5 from '@/assets/images/a7.jpg'
 import t1 from "@/assets/images/t1.png"
 import t2 from "@/assets/images/t2.png"
 import t3 from "@/assets/images/t3.png"
@@ -33,7 +38,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Home.css';
-import { Users, Briefcase, Calendar, BookOpen,  ArrowUpRight } from "lucide-react";
+import { Users, Briefcase, Calendar, BookOpen,  ArrowUpRight, BadgeCheck,  } from "lucide-react";
 import { MotionConfig, motion } from "framer-motion";
 import Testimonial from "../../layout/ulayout/Testimonial";
 
@@ -104,10 +109,12 @@ function useCountUpOnView(target, durationMs = 2000) {
 }
 
 const items = [
+  //  { id: "legacy", type: "text", label: "Legacy of Excellence" },
    { id: "years", label: "Years", value: 37, icon: <Calendar size={20} /> },
-    { id: "students", label: "Students", value: 80000, icon: <Users size={20} /> },
-    { id: "corporate", label: "Corporate Training", value: 20000, icon: <Briefcase size={20} /> },
-    { id: "courses", label: "Courses", value: 50, icon: <BookOpen size={20} /> },
+    { id: "students", label: "Students", value: 85000, icon: <Users size={20} /> },
+    { id: "corporate", label: "Corporate Training", value: 300, icon: <Briefcase size={20} /> },
+    { id: "recruitment", label: "Recruiters", value: 1000, icon: <BadgeCheck size={20} /> },
+    { id: "courses", label: "Courses", value: 35, icon: <BookOpen size={20} /> },
    
   ];
 
@@ -131,6 +138,13 @@ const items = [
     link: "#",
   },
   {
+    title: "Multimedia",
+    image: t3, // Replace with actual image path
+    description:
+      "Unlock the power of Web Development through practical learning and expert-driven mentorship.",
+    link: "#",
+  },
+  {
     title: "Cyber Security",
     image: t2, // Replace with actual image path
     description:
@@ -143,28 +157,42 @@ const items = [
 const cards = [
 
   {
-    // bgColor: "#ffffffff", // purple
-    title: "Be Mentored 1:1 by Experienced Professionals",
-    description:
-      "Get Senior Industry experts as mentors to guide you with mock interviews, career advice, resume review, etc.",
-    
+    title: "Student Internship",
+    img: t1,
   },
   {
-    // bgColor: "#ffffffff", // orange
-    title: "Become Part of a thriving community for life",
-    description:
-      "As part of our extensive alumni community you will find job referral, career advice, life advice, or your future co-founder – all in one place.",
-    
+    title: "Industry Project",  
+    img: "",
+  },
+  {
+    title: "Corporate Training",
+    img: "",
+  },
+  {
+    title: "", 
+    img: "", 
+  },
+  {
+    title: "",  
+    img: "",
   },
 ];
 
 //  Achieviements
-const awards = [
-  { title: "Best Data Science Program", icon: "Images", logo: "toi.png" },
-  { title: "Best Investment Program", icon: "Images", logo: "et.png" },
-  { title: "Top Full Stack Development Program", icon: "Images", logo: "toi.png" },
-  { title: "Best Data Science Program", icon: "Images", logo: "toi.png" },
-  { title: "Best Data Science Program", icon: "Images", logo: "toi.png" },
+
+
+
+const cardData = [
+  { id: 1, img: ai1, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 1996" },
+  { id: 2, img: ai2, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity, 1996" },
+  { id: 3, img: ai3, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 2000" },
+  { id: 4, img: ai4, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity, 2001" },
+  { id: 5, img: ai5, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 2003" },
+  { id: 6, img: ai2, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity" },
+  { id: 7, img: ai3, text: "Best Instructor Award form Autodesk Inc., USA" },
+  { id: 8, img: ai4, text: "Best Instructor Award form Autodesk Inc., USA" },
+  // { id: 9, img: ai5, text: "Card Fi" },
+ 
 ];
 
 
@@ -258,13 +286,13 @@ Our mission is to bridge the gap between education and industry by offering hand
   slidesPerView={10} // auto width for smooth continuous scroll
   loop={true}
   freeMode={true}
-  freeModeMomentum={false}
+  freeModeMomentum={true}
   speed={2000} // slow & smooth
   allowTouchMove={false}
   autoplay={{
     delay: 0,
     disableOnInteraction: false,
-    pauseOnMouseEnter: false,
+    pauseOnMouseEnter: true,
   }}
    breakpoints={{
         320: { slidesPerView: 4}, // small screen
@@ -293,16 +321,37 @@ Our mission is to bridge the gap between education and industry by offering hand
     </div>
 
 
-
-{/* Counter  */}
-
 <MotionConfig reducedMotion="user">
   <div className="counter-container">
+     <div className="relative flex items-center justify-center h-40 bg-gray-200 overflow-hidden">
+      {/* Oval Frame Background */}
+      <motion.div
+        initial={{ x: -200, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-72 h-36 bg-red-600 rounded-r-full"
+      ></motion.div>
+      <motion.h1
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.5 }}
+        className="relative text-4xl font-bold text-black text-center"
+      >
+        Legacy <br /> of <br /> Excellence
+      </motion.h1>
+    </div>
     {items.map((item) => {
+      if (item.type === "text") {
+        return (
+          <div key={item.id} className="counter-card special-card">
+            <div className="legacy-text">{item.label}</div>
+          </div>
+        );
+      }
+
       const { value, ref } = useCountUpOnView(item.value, 900);
       return (
         <div key={item.id} className="counter-card" ref={ref}>
-          {/* Number at top */}
           <motion.div
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
@@ -312,7 +361,6 @@ Our mission is to bridge the gap between education and industry by offering hand
             {value.toLocaleString()}+
           </motion.div>
 
-          {/* Icon + Text side-by-side */}
           <div className="counter-header">
             <span className="counter-icon">{item.icon}</span>
             <span className="counter-label">{item.label}</span>
@@ -323,6 +371,37 @@ Our mission is to bridge the gap between education and industry by offering hand
   </div>
 </MotionConfig>
 
+
+
+{/* Counter  */}
+
+{/* <MotionConfig reducedMotion="user">
+  <div className="counter-container">
+    {items.map((item) => {
+      const { value, ref } = useCountUpOnView(item.value, 900);
+      return (
+        <div key={item.id} className="counter-card" ref={ref}> */}
+          {/* Number at top */}
+          {/* <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+            className="counter-value"
+          >
+            {value.toLocaleString()}+
+          </motion.div> */}
+
+          {/* Icon + Text side-by-side */}
+          {/* <div className="counter-header">
+            <span className="counter-icon">{item.icon}</span>
+            <span className="counter-label">{item.label}</span>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</MotionConfig> */}
+
 {/* top courses */}
 <div className="top-course">
  
@@ -330,6 +409,7 @@ Our mission is to bridge the gap between education and industry by offering hand
   <div className="courses-wrapper">
      <h2>Top Courses</h2>
       <div className="courses-container">
+        
         {courseList.map((course, index) => (
           <div key={index} className="course">
             <h3 className="course-title">{course.title}</h3>
@@ -341,10 +421,17 @@ Our mission is to bridge the gap between education and industry by offering hand
           </div>
         ))}
       </div>
-      <div className="view-all-wrapper">
+      {/* <div className="view-all-wrapper">
         <a href="#" className="view-all-button">
-          View All Courses <ArrowUpRight size={18} />
+          View All Courses <ArrowUpRight size={45}  />
         </a>
+        <button className='course-button'>View All Courses</button>
+      </div> */}
+      <div className="view-all-courses-btn-wrapper">
+          <button className="view-all-courses-button">View All Courses</button>
+          <span className="view-all-courses-arrow-circle">
+            <span className="view-all-courses-arrow-icon">&#8599;</span>
+          </span>
       </div>
     </div>
 </div>
@@ -354,7 +441,7 @@ Our mission is to bridge the gap between education and industry by offering hand
 
 {/* Corporate training  */}
 <div className="training">
-  <h2>Corporate Training</h2>
+  <h2>Academic & Industry Connect</h2>
  <div className="info-cards-container">
       {cards.map((card, index) => (
         <div key={index} className="info-card">
@@ -363,35 +450,87 @@ Our mission is to bridge the gap between education and industry by offering hand
             // style={{ backgroundColor: card.bgColor }}
           >
             <h3>{card.title}</h3>
-            <p>{card.description}</p>
+           
           </div>
           {/* <div className="card-image">
             <img src={card.image} alt={card.title} />
           </div> */}
+           <p>{card.description}</p>
         </div>
       ))}
     </div>
  </div>
 {/* Achieviements */}
 
-    <div className="awards-section">
-      <h2 className="awards-title">
-        <span className='red'> Our </span> <span className='Blue'>Achievements</span>
-      </h2>
-
-      <div className="awards-icons">
-        {awards.map((award, index) => (
-          <div key={index} className="award-item">
-          <h2> {award.icon} </h2>
-            <p>{award.title}</p>
+  <div className="awards-section">
+  <div className="slider-container" style={{ padding: "40px" }}>
+    
+    <Swiper
+      modules={[Autoplay, Pagination]}
+      spaceBetween={20}
+      slidesPerView={4}
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 2000, disableOnInteraction: false }}
+      loop={true}
+      breakpoints={{
+        320: { slidesPerView: 1 },
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 4 },
+      }}
+      className="mySwiper"
+    >
+      {/* Slides */}
+      {cardData.map((card) => (
+        <SwiperSlide key={card.id}>
+          <div
+            style={{
+              border: "1.5px solid #ff0000",
+              borderRadius: "10px",
+              height: "380px",
+              overflow: "hidden",
+              textAlign: "center",
+              background: "#fff",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+            }}
+          >
+            <img
+              src={card.img}
+              alt={card.text}
+              style={{ width: "250px", height: "250px", objectFit: "contain", padding: "20px" }}
+            />
+            <h4 style={{ padding: "5px", margin: "5px" }}>{card.text}</h4>
           </div>
-        ))}
-      </div>
-      </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    <h2 className="awards-title">
+      <span> Our </span> <br /><span className='Blue'>Achievements</span>
+    </h2>
+  </div>
+</div>
 
 <div className="review">
 <Testimonial/>
 </div>
+<div className="indust">
+  <div className="indust-text">
+    <h1>infrastructure</h1>  
+    <p>Lorem ipsum dolor, sit amet consectetur a
+      dipisicing elit. Harum ea magnam qui cumque.<br/>
+       Explicabo, voluptatibus! Adipisci cumque voluptatum,<br/>
+        ut accusamus quisquam dicta, 
+      molestias quo tempore odit dolor dolores recusandae nam.</p></div>
+
+    <div className="indust-img">
+      <img src={i15} alt="" />
+      <img src={i15} alt="" />
+      <img src={i15} alt="" />
+      <img src={i15} alt="" />
+      <img src={i15} alt="" />
+      <img src={i15} alt="" />
+    </div>
+</div>
+{/* <h1></h1> */}
     </>
   );
 };

@@ -1,0 +1,600 @@
+.about-container {
+  background-image: url('../../assets/images/1920x1080.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* padding: 60px; ✅ Padding for breathing space */
+  box-sizing: border-box;
+  background-color:#dcdcdc;
+}
+
+.about-overlay {
+  background-color: rgba(255, 255, 255, 0.0); /* Optional: if you want translucent background */
+  padding: 60px;
+  border-radius: 20px;
+  max-width: 650px;
+  text-align: left;
+  box-sizing: border-box;
+  margin-bottom: 260px;
+}
+
+.about-content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1c1f4c;
+  margin-bottom: 20px;
+}
+
+.about-content h1 span {
+  color: #1c1f4c;
+}
+
+.about-content p {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+  line-height: 1.8;
+  color: #1c1f4c;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+}
+
+
+/* 🔵 Button Group */
+.explore-courses-btn-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  margin-top: 30px;
+}
+
+.explore-courses-button {
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a237e;
+  background-color: transparent;
+  border: 1px solid #1a237e;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  text-align: center;
+}
+
+.explore-courses-button:hover {
+  background-color: #1a237e;
+  color: #fff;
+}
+
+.explore-courses-arrow-circle {
+  position: absolute;
+  left: calc(100% - 23px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #1a237e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.explore-courses-arrow-icon {
+  font-size: 2rem;
+  margin-top: -6px;
+  color: #fff;
+}
+
+
+
+
+/* 🔵 Outer Container */
+.outer-history-container {
+  background-color: #fff;
+  padding-bottom: 40px;
+  margin-top: -250px;
+}
+
+/* 🔵 Title */
+.history-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+  color: #1c1f4c;
+}
+
+.history-title span {
+  font-weight: 800;
+}
+
+/* 🔵 History Section Background */
+.history-section {
+  background-image: url('https://placehold.co/1920x600');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0 30px;
+}
+
+/* 🟢 Content: Left + Right */
+.history-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 420px;
+  flex-wrap: wrap;
+}
+
+/* 🟢 Left Card */
+.history-card {
+  background-color: #1c1f4c;
+  padding: 20px;
+  border-radius: 25px;
+  max-width: 720px;
+  color: #fff;
+  margin-left: -200px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.year-label {
+  background-color: #fff;
+  color: #1c1f4c;
+  font-weight: bold;
+  padding: 6px 30px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: -12px;
+  font-size: 40px;
+}
+
+.history-card h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 40px;
+  margin-left: 35px;
+}
+
+.history-card ul {
+  padding-left: 70px;
+}
+
+.history-card ul li {
+  margin-bottom: 12px;
+  font-size: 25px;
+  line-height: 1.6;
+}
+
+/* 🟢 Right Images */
+.photo-frame-container {
+  position: relative;
+  width: 350px;
+  height: 250px;
+
+}
+
+.photo-frame {
+  position: absolute;
+  width: 450px;
+  height: 350px;
+  border: 8px solid #fde8e8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame-one {
+  transform: rotate(-8deg);
+  top: -100px;
+  left: -160px;
+  z-index: 1;
+}
+
+.frame-two {
+  transform: rotate(8deg);
+  top: -25px;
+  left: 90px;
+  z-index: 1;  
+}
+
+/* When Active: Bring to front, remove rotation */
+.active-frame {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 3;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* Hover Effect: Bring forward & straighten */
+.photo-frame:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.frame-two:hover {
+  transform: scale(1.03) rotate(8deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* 🟢 Navigation Arrows */
+.timeline-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.nav-btn {
+  border: 2px solid red;
+  background: transparent;
+  color: red;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: red;
+  color: #fff;
+}
+
+/* 🔵 Timeline Navigation */
+.timeline-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 30px 0;
+  background: #fff;
+}
+
+.timeline-years-scroll {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 30px 40px;
+  min-width: max-content;
+  justify-content: center;
+}
+
+/* 🔵 Horizontal Line Split: Blue + Grey */
+.timeline-line-full {
+  position: absolute;
+  top: -3%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: #d3d3d3; /* grey line as base */
+  border-radius: 3px;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 100%;
+}
+
+.timeline-line-progress {
+  position: absolute;
+  top: -3%;
+  left: 0;
+  height: 6px;
+  background-color: #0b1f5d; /* blue progress */
+  border-radius: 3px;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: width 0.3s ease;
+}
+
+/* 🔵 Horizontal Line */
+.timeline-line {
+  position: absolute;
+  margin-top: -55px;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: #0b1f5d;
+  border-radius: 3px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timeline-year-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+} 
+
+.timeline-moving-dot {
+  position: absolute;
+  top: -3.5%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px; 
+  background-color: red;
+  border-radius: 50%;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+
+/* 🔴 Red Dot (Fixed at start, can animate later) */
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  left: 10%;        /* You can adjust this value to position the dot anywhere (e.g., 0%, 50%, 100%) */
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+/* 🔵 Year Buttons */
+.timeline-year {
+  padding: 8px 20px;
+  border: 2px solid #0b1f5d;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #0b1f5d;
+  font-size: 18px;
+  background: #fff;
+  white-space: nowrap;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.timeline-year.active-year {
+  background-color: #0b1f5d;
+  
+  color: #fff;
+  transform: translateY(0px);
+}
+
+
+.active-dot {
+  background-color: red;
+}
+
+.timeline-year:hover {
+  background-color: #0b1f5d;
+  color: #fff;
+  
+}
+
+
+.active-year {
+  background-color: #0b1f5d;
+  color: #fff;
+}
+
+.mission-vision-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #1c2654;  /* Dark blue */
+  padding: 25px 60px;
+  border-radius: 40px;
+  gap: 60px;  /* Much smaller gap for better balance */
+  flex-wrap: wrap;
+  max-width: 1700px;   /* Removed fixed width */
+  margin: 20px auto;   /* Center horizontally */
+  box-sizing: border-box;
+}
+
+.mission-vision-card {
+  flex: 1 1 675px;
+  max-width: 675px;
+  color: #fff;
+  text-align: left;
+}
+
+.mission-vision-card h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.mission-vision-card p {
+  font-size: 30px;
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+
+
+
+
+
+/* vision mission value  */
+
+
+.mission-vision-wrapper {
+  padding: 50px 80px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+/* Vision & Mission Cards */
+.mission-vision-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.mv-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 500px;
+  margin: auto;
+}
+
+.mv-card img {
+  width: 150px;              /* adjust icon size */
+  height: 150px;
+  object-fit: contain;      /* keep image ratio */
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mv-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a1a3f;
+  margin-bottom: 12px;
+}
+
+.mv-card p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Values Section */
+.values-section h2 {
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #0a1d3b;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.value-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-card svg {
+  color: #0a1d3b;
+  margin-bottom: 12px;
+}
+
+.value-card span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+
+/* ✅ Responsive Breakpoints */
+
+/* Tablets & Small Desktops */
+@media (max-width: 1200px) {
+  .about-overlay {
+    padding: 40px;
+    max-width: 550px;
+  }
+
+  .about-content h1 {
+    font-size: 40px;
+  }
+
+  .about-content p {
+    font-size: 18px;
+  }
+}
+
+/* Tablets & Large Mobiles */
+@media (max-width: 900px) {
+  .about-container {
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .about-overlay {
+    padding: 30px;
+    max-width: 100%;
+  }
+
+  .about-content h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .explore-courses-btn-group {
+    justify-content: center;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .about-content h1 {
+    font-size: 26px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .explore-courses-button {
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+  }
+
+  .explore-courses-arrow-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .explore-courses-arrow-icon {
+    font-size: 1.5rem;
+  }
+}

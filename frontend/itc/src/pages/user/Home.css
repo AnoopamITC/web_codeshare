@@ -259,18 +259,21 @@ height: 150px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 25px;
+  padding: 50px;
+  background-color: #999999;
+  margin-top: -20px;
 }
 
 .counter-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   width: 250px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 110px;
 }
 
 .counter-card:hover {
@@ -279,10 +282,11 @@ height: 150px;
 }
 
 .counter-value {
-  font-size: 2rem;
+  font-size: 35px;
   font-weight: bold;
   color: #d71920;
-  margin-bottom: 12px;
+  margin-top: 20px;
+  /* text-align: center; */
 }
 
 
@@ -295,22 +299,24 @@ height: 150px;
 
 
 .counter-icon {
-  font-size: 1.5rem;
+  /* font-size: 100px; */
   color: #444;
 }
 
 
+
 .counter-label {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 700;
   color: #333;
 }
  
 
-.top-course h2{
+  .top-course h2{
   /* margin-top: 30px; */
 text-align: center;
-color: #06033d;
+color: #d71920;
+font-size: 40px;
 }
 
 .courses-wrapper {
@@ -321,11 +327,74 @@ color: #06033d;
   padding: 2rem;
 }
 
+.view-all-courses-btn-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.view-all-courses-button {
+  padding: 1rem 5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #06033d;
+  border: 1px solid #06033d;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.view-all-courses-button:hover {
+  background-color: #fff;
+  color: #06033d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.view-all-courses-arrow-circle {
+  position: absolute;
+  left: calc(100% - 25px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.view-all-courses-arrow-icon {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.legacy{
+  text-align: center;
+    color: black;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    line-height: 1.1;
+}
 .courses-container {
   display: flex;
   gap: 100px !important;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: -30px;
+
 }
 
 .course {
@@ -344,7 +413,7 @@ color: #06033d;
 
 .course-title {
   margin-top: -10px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #002366;
 }
@@ -378,17 +447,24 @@ color: #06033d;
 }
 
 .view-all-wrapper {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+  padding: 20px;
+  margin-left: 25px;
+  
 }
 
 .view-all-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  height: 50px;
+  width: 400px;
+  gap: 1.5rem;
   padding: 0.5rem 1rem;
   border: 2px solid #002366;
-  color: #002366;
+  background-color: #06033d;
+  color: #fff;
   font-weight: bold;
+  font-size: 40px;
   border-radius: 25px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -403,12 +479,17 @@ color: #06033d;
 
 /*  corporate training */
 .training{
-  background-color: #F5F5F5;
+  background-color:#a2a2a2;
+  height: 500px;
+  padding: 20px;
+  margin-top: 35px;
 }
 
 .training h2{
 text-align: center;
-color: #06033d;
+color: #d71920;
+font-size: 40px;
+margin-top: 10px;
 }
     .card-container {
       display: flex;
@@ -467,16 +548,9 @@ color: #06033d;
     .card-content button:hover {
       background: #b0151a;
     }
-/*  training card */
-.training{
-
-  background-color: #F5F5F5;
-
-}
-
 .info-cards-container {
   display: flex;
-   height: 350px;
+   height: 300px;
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
@@ -486,8 +560,8 @@ color: #06033d;
 }
 
 .info-card {
-  width: 320px;
- 
+  width: 250px;
+ background-color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -503,9 +577,10 @@ color: #06033d;
 }
 
 .card-top h3 {
-  font-size: 1.1rem;
+  text-align: center;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 1px;
 }
 
 .card-top p {
@@ -535,14 +610,17 @@ color: #06033d;
 /* Achieviements */
 
 .awards-section {
-  text-align: center;
-  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
 .awards-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 30px;
+  width: 20%;
+  text-align: right;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-right: 230px;
+  margin-top: 125px;
 }
 
 .awards-title .red {
@@ -567,6 +645,14 @@ color: #06033d;
   max-width: 150px;
 }
 
+.slider-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 40px;
+} 
+
 .award-icon {
   width: 70px;
   margin-bottom: 10px;
@@ -587,7 +673,35 @@ color: #06033d;
   height: 40px;
 }
 
+.mySwiper {
+  width: 100%;
+  margin-left: 155px; /* Ensure swiper is aligned to the left */
+}
 
+.mySwiper .swiper-pagination {
+  position: unset;
+  width: 100%;
+  text-align: center;
+  
+}
+
+
+/* Normal bullet */
+.mySwiper .swiper-pagination-bullet {
+  background-color: #333;   /* tamaro color */
+  opacity: 1;              /* default opacity 0.2 hoy che */
+}
+
+/* Active bullet */
+.mySwiper .swiper-pagination-bullet-active {
+  background-color: rgb(0, 0, 0);  /* active bullet no color */
+}
+
+
+.myswiper{
+  height: 250px;
+  width: 200px;
+}
 
 /* ===== Footer Spacing Fix ===== */
 body {
@@ -689,6 +803,27 @@ main {
   transform: translateY(-3px);
 }
 
+
+
+.indust{
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+  padding: 60px;
+}
+.indust-img{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px;
+}
+.indust-img img{
+ width: 300px;
+ height: 125px;
+ background-repeat: no-repeat;
+
+  
+}
+
 /* Responsive for Mobile */
 @media(max-width: 768px) {
   .career-box {
@@ -782,14 +917,20 @@ main {
   }
   .counter-container{
       display: grid;
-  grid-template-columns: repeat(2,1fr)
-  }
+      
+  grid-template-columns: repeat(2,1fr);
+  
+}
+
+
  .counter-value {
     font-size: 18px;
   }
 
   .counter-label {
     font-size: 16px;
+   
+    
   }
 
   .img-count img {
@@ -846,6 +987,7 @@ main {
   /* .counter-card {
     min-width: 140px;
   } */
+
 
   .awards-icons {
     gap: 15px;

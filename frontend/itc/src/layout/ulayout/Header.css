@@ -15,60 +15,6 @@ body {
   opacity: 0;
 }
 
-/* ===== Red Top Header ===== */
-/* .top-header {
-  background-color: #d71920;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  padding: 0 100px;
-  height: 45px;
-  z-index: 5;
-}
-
-.right-section {
-  display: flex;
-  gap: 20px;
-   align-items: center;
-  flex-wrap: wrap;
-}
-
-.right-section a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-.cont{
-  /* margin-top: 13px; */
-  /* display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-right: 230px;
-
-}
-.right-section .icon{
-  height: 20px;
-  width: 20px;
-  margin-right: 8px;  
-}
-.right-section .icons{
-  height: 20px;
-  width: 20px;
-  margin-right: 8px;  
- 
-} */ 
-
-/* Wrapper */
-.header-wrapper {
-  position: relative;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.header-wrapper.hide .top-header,
-.header-wrapper.hide .floating-frame {
-  transform: translateY(-100%);
-  opacity: 0;
-}
 
 /* Top red bar */
 .top-header {
@@ -78,9 +24,29 @@ body {
   align-items: center;
   z-index: 5;
   padding: 0 40px;
+    transition: all 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+  /* height: auto; */
+  overflow: hidden;
+}
+ /* .top-header {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+} */
 
+.header-wrapper.hide .top-header {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
+.header-wrapper.hover-show .top-header {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 /* Inner flex: left brand + right menu */
 .header-inner {
   display: flex;
@@ -185,7 +151,11 @@ body {
   left: 40px;
   z-index: 200;
 }
-
+.floating-frame:not(.show-float) {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
 .floating-frame img {
   height: 180px;
   width: 150px;
@@ -226,9 +196,15 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-left: 550px;
+  margin-left: 450px;
+  /* margin-left: 150px; */
   /* padding: 0 40px; */
 }
+
+/* .nav-links .phone-num{
+  color: #fff;
+  margin-right: 200px;
+} */
 
 .nav-links a {
   color: #ffffff;
@@ -267,23 +243,24 @@ body {
 /* SHOW DROPDOWN ON HOVER */
 .dropdown:hover .dropdown-content {
   display: flex;
-  /* show as flex container */
+  /* justify-content: space-between; */
+
 }
 
 /* LEFT SIDE CONTENT */
 .dropdown-left {
   flex: 1;
   /* display: flex; */
-    max-width: 20%;
+    max-width: 25%;
     color: #fff;
-    margin-top: 35px;
-    margin-left: 525px;
+    margin-top: 70px;
+    padding-left:75px;
 }
 
-.dropdown-left h3 {
+.dropdown-left h1 {
 
   margin: 0 0 10px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   color: #ffcc00; /* title highlight */
 }
@@ -291,6 +268,7 @@ body {
 .dropdown-left p {
   font-size: 15px;
   line-height: 1.6;
+
   color: #e0e0e0;
 }
 
@@ -299,22 +277,23 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-
+padding-left: 500px;
 }
 
 .dropdown-right a {
   color: #ffffff;
-  padding: 10px 14px;
+  /* padding: 10px 14px; */
   text-decoration: none;
   display: block;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 600;
   border-radius: 6px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .dropdown-right a:hover {
   /* background-color: #f5f5f5; */
-  width: 20%;
+  width: 50%;
   /* color: #030266; */
 }
 
@@ -324,6 +303,10 @@ sub drop css */
   position: relative; /* parent relative */
 }
 
+.text-line:hover{
+ width: 50px;
+ 
+}
 /* hidden by default */
 .main-sub {
   position:fixed;
@@ -358,32 +341,32 @@ sub drop css */
 
 /* end */
 /* wrapper link (first line) */
-.cta-wrapper {
+/* .cta-wrapper {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #ffffff;       /* blue for first line */
+  color: #ffffff;       
   font-weight: 600;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1;
   margin-left: 20px;
   border-radius: 10px;
-}
+} */
  
-.cta-wrapper button{
+/* .cta-wrapper button{
   height: 150px;
   width: 200px;
-}
+} */
 
 /* second line (span) */
-.cta-link {
+/* .cta-link {
   display: block;
-  color: #ffffff;       /* red for second line */
+  color: #ffffff;      
   font-weight: 450;
   font-size: 12px;
   letter-spacing: 0.2px;
-}
+} */
 
 /* ===== Search Box ===== */
 .search  {
@@ -423,7 +406,7 @@ sub drop css */
   color: #fff;
   text-decoration: none;
   position: relative ;
-  padding: 8px 0;   /* thodu space underline mate */
+  padding: 8px 0;   
   margin: 0 14px;
   font-weight: 500;
 }
@@ -436,12 +419,11 @@ sub drop css */
   bottom: 0;
   width: 0%;
   height: 2px;
-  background: #fff;   /* line color */
+  background: #fff;   
   transition: width 0.3s ease;
-}
-
+} 
 /* hover par line appear */
-.nav-links a:hover::after {
+ .nav-links a:hover::after {
   width: 100%;
 }
 
@@ -477,6 +459,9 @@ sub drop css */
   .nav-links {
     margin-left: 100px;
     gap: 12px;
+  }
+  .swiper-slide{
+    display: none;
   }
 }
 
@@ -594,4 +579,108 @@ sub drop css */
   }
 }
 
+/* ================== EXTRA MOBILE FIXES ================== */
 
+/* Large mobiles (480px and below) */
+@media (max-width: 480px) {
+  .top-header {
+    padding: 5px;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textitc {
+    margin: 0;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .brand-rank {
+    font-size: 22px;
+  }
+
+  .brand-text a {
+    font-size: 12px;
+  }
+
+  /* Floating logo smaller */
+  .floating-frame img {
+    height: 65px;
+    width: 55px;
+    padding: 0;
+  }
+
+  .mini-logo img {
+    height: 35px;
+  }
+
+  /* Navbar better spacing */
+  .nav-bar {
+    height: auto;
+    padding: 6px 8px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .dropdown-left {
+    padding-left: 0;
+    margin-top: 15px;
+  }
+
+  .dropdown-right {
+    padding-left: 0;
+  }
+
+  .search {
+    width: 180px;
+    font-size: 12px;
+  }
+}
+
+/* Very small phones (360px and below) */
+@media (max-width: 360px) {
+  .brand-rank {
+    font-size: 18px;
+  }
+  .brand-text a {
+    font-size: 11px;
+    line-height: 1.1;
+  }
+
+  .floating-frame img {
+    height: 55px;
+    width: 45px;
+  }
+
+  .mini-logo img {
+    height: 28px;
+  }
+
+  .nav-bar {
+    padding: 4px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    font-size: 13px;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .dropdown-left h3 {
+    font-size: 16px;
+  }
+  .dropdown-left p {
+    font-size: 13px;
+  }
+
+  .search {
+    width: 150px;
+    font-size: 11px;
+    height: 26px;
+  }
+}

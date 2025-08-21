@@ -1,0 +1,485 @@
+/* 🔵 Outer Container */
+.outer-history-container {
+  background-color: #fff;
+  padding-bottom: 40px;
+}
+
+/* 🔵 Title */
+.history-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+  color: #1c1f4c;
+}
+
+.history-title span {
+  font-weight: 800;
+}
+
+/* 🔵 History Section Background */
+.history-section {
+  background-image: url('https://placehold.co/1920x600');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0 30px;
+}
+
+/* 🟢 Content: Left + Right */
+.history-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 420px;
+  flex-wrap: wrap;
+}
+
+/* 🟢 Left Card */
+.history-card {
+  background-color: #1c1f4c;
+  padding: 20px;
+  border-radius: 25px;
+  max-width: 720px;
+  color: #fff;
+  margin-left: -200px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.year-label {
+  background-color: #fff;
+  color: #1c1f4c;
+  font-weight: bold;
+  padding: 6px 30px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: -12px;
+  font-size: 40px;
+}
+
+.history-card h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 40px;
+  margin-left: 35px;
+}
+
+.history-card ul {
+  padding-left: 70px;
+}
+
+.history-card ul li {
+  margin-bottom: 12px;
+  font-size: 25px;
+  line-height: 1.6;
+}
+
+/* 🟢 Right Images */
+.photo-frame-container {
+  position: relative;
+  width: 350px;
+  height: 250px;
+
+}
+
+.photo-frame {
+  position: absolute;
+  width: 450px;
+  height: 350px;
+  border: 8px solid #fde8e8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame-one {
+  transform: rotate(-8deg);
+  top: -100px;
+  left: -160px;
+  z-index: 1;
+}
+
+.frame-two {
+  transform: rotate(8deg);
+  top: -25px;
+  left: 90px;
+  z-index: 1;  
+}
+
+/* When Active: Bring to front, remove rotation */
+.active-frame {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 3;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* Hover Effect: Bring forward & straighten */
+.photo-frame:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.frame-two:hover {
+  transform: scale(1.03) rotate(8deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* 🟢 Navigation Arrows */
+.timeline-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.nav-btn {
+  border: 2px solid red;
+  background: transparent;
+  color: red;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: red;
+  color: #fff;
+}
+
+/* 🔵 Timeline Navigation */
+.timeline-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 30px 0;
+  background: #fff;
+}
+
+.timeline-years-scroll {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 30px 40px;
+  min-width: max-content;
+  justify-content: center;
+}
+
+/* 🔵 Horizontal Line Split: Blue + Grey */
+.timeline-line-full {
+  position: absolute;
+  top: -3%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: #d3d3d3; /* grey line as base */
+  border-radius: 3px;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 100%;
+}
+
+.timeline-line-progress {
+  position: absolute;
+  top: -3%;
+  left: 0;
+  height: 6px;
+  background-color: #0b1f5d; /* blue progress */
+  border-radius: 3px;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: width 0.3s ease;
+}
+
+/* 🔵 Horizontal Line */
+.timeline-line {
+  position: absolute;
+  margin-top: -55px;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: #0b1f5d;
+  border-radius: 3px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timeline-year-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+} 
+
+.timeline-moving-dot {
+  position: absolute;
+  top: -3.5%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px; 
+  background-color: red;
+  border-radius: 50%;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+
+/* 🔴 Red Dot (Fixed at start, can animate later) */
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  left: 10%;        /* You can adjust this value to position the dot anywhere (e.g., 0%, 50%, 100%) */
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+/* 🔵 Year Buttons */
+.timeline-year {
+  padding: 8px 20px;
+  border: 2px solid #0b1f5d;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #0b1f5d;
+  font-size: 18px;
+  background: #fff;
+  white-space: nowrap;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.timeline-year.active-year {
+  background-color: #0b1f5d;
+  color: #fff;
+  transform: translateY(0px);
+}
+
+
+.active-dot {
+  background-color: red;
+}
+
+.timeline-year:hover {
+  background-color: #0b1f5d;
+  color: #fff;
+  
+}
+
+
+.active-year {
+  background-color: #0b1f5d;
+  color: #fff;
+}
+
+.mission-vision-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #1c2654;  /* Dark blue */
+  padding: 25px 60px;
+  border-radius: 40px;
+  gap: 60px;  /* Much smaller gap for better balance */
+  flex-wrap: wrap;
+  max-width: 1700px;   /* Removed fixed width */
+  margin: 20px auto;   /* Center horizontally */
+  box-sizing: border-box;
+}
+
+.mission-vision-card {
+  flex: 1 1 675px;
+  max-width: 675px;
+  color: #fff;
+  text-align: left;
+}
+
+.mission-vision-card h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.mission-vision-card p {
+  font-size: 30px;
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+
+
+/* 🔵 Responsive */
+/* Existing CSS maintained exactly as is */
+
+/* Responsive Enhancements Only */
+
+@media (max-width: 1200px) {
+  .history-content {
+    gap: 15px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+
+  .history-card {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .photo-frame-container {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo-frame {
+    width: 320px;
+    height: 240px;
+    position: absolute;
+    border: 8px solid #fde8e8;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+  }
+
+  .frame-one {
+    top: 50%;
+    left: 10%;
+    transform: rotate(-8deg) translateY(-50%);
+    z-index: 1;
+  }
+
+  .frame-two {
+    top: 50%;
+    right: 10%;
+    transform: rotate(8deg) translateY(-50%);
+    z-index: 2;
+  }
+
+  .photo-frame:hover {
+    transform: rotate(0deg) scale(1.05) translateY(-50%);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+  }
+}
+
+@media (max-width: 768px) {
+  .history-title {
+    font-size: 28px;
+  }
+
+  .year-label {
+    font-size: 24px;
+    padding: 4px 20px;
+  }
+
+  .history-card h3 {
+    font-size: 24px;
+    margin-left: 0;
+  }
+
+  .history-card ul {
+    padding-left: 20px;
+  }
+
+  .history-card ul li {
+    font-size: 16px;
+  }
+
+  .timeline-years-scroll {
+    gap: 20px;
+    padding: 10px 15px;
+  }
+
+  .timeline-year {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+
+  .photo-frame-container {
+    height: 260px;
+  }
+
+  .photo-frame {
+    width: 250px;
+    height: 180px;
+  }
+
+  .frame-one {
+    left: 5%;
+  }
+
+  .frame-two {
+    right: 5%;
+  }
+
+  .mission-vision-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .mission-vision-card h3 {
+    font-size: 24px;
+  }
+
+  .mission-vision-card p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-nav {
+    gap: 10px;
+  }
+
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .timeline-year {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .photo-frame-container {
+    height: 220px;
+    margin-left: 30px;
+  }
+
+  .photo-frame {
+    width: 200px;
+    height: 150px;
+  }
+
+  .frame-one {
+    left: 2%;
+  }
+
+  .frame-two {
+    right: 2%;
+  }
+
+  .mission-vision-card h3 {
+    font-size: 20px;
+  }
+
+  .mission-vision-card p {
+    font-size: 14px;
+  }
+}

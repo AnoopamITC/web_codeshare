@@ -121,26 +121,48 @@ export default function Header() {
  const [open, setOpen] = useState(false);
 
 
+  const [scrollDir, setScrollDir] = useState("up");
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsAtTop(window.scrollY === 0);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setScrollDir("down");
+      } else {
+        setScrollDir("up");
+      }
+
+      setLastScrollY(currentScrollY);
+      setIsAtTop(currentScrollY === 0);
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
+
+  const headerClass = [
+  "header-wrapper",
+  isAtTop ? "" : scrollDir === "down" && !showRed ? "hide" : "",
+  showRed ? "hover-show" : ""
+].join(" ");
 
   return (
     <>
      
 
-
-
-      <header className={`header-wrapper ${isAtTop ? "" : "hide"} ${showRed?"hover-show":""}`}
-      onMouseEnter={()=> setShowRed(true)}
-      onMouseLeave={()=> setShowRed(false)}>
-  <div className="floating-frame">
+   <header
+  className={`header-wrapper ${isAtTop ? "" : scrollDir === "down" && !showRed ? "hide" : ""} ${showRed ? "hover-show" : ""}`}
+  onMouseEnter={() => setShowRed(true)}
+  onMouseLeave={() => setShowRed(false)}
+>
+  
+  {(isAtTop || showRed) && (
+  <div className="floating-frame show-float">
     <img src={frameImg} alt="Logo Frame" />
   </div>
+)}
 
   <div className="top-header">
     <div className="header-inner">
@@ -162,7 +184,14 @@ export default function Header() {
         <Link>Alumni</Link>
         <Link>Certificate Authentication</Link>
         <button className="search">Search...<FaSearch className="icsearch"/></button>
-        {/* 
+       
+
+      </div>
+    </div>
+  </div>
+
+</header>
+ {/* 
          <div className="actions">
         {!active && (
           <FaSearch
@@ -179,15 +208,14 @@ export default function Header() {
         )}
       </div> */}
 
-      </div>
-    </div>
-  </div>
-</header>
-
-
       {/* Blue Navbar - FIXED (stays on top while scrolling) */}
-      <nav className={`nav-bar ${isAtTop ? "" : "scrolled"}`}>
-        {/* Mini logo only visible when scrolled */}
+      <nav
+  className={`nav-bar ${isAtTop ? "" : "scrolled"}`}
+  onMouseEnter={() => setShowRed(true)}
+  onMouseLeave={() => setShowRed(false)}
+>
+
+        {/* Mini logo only visible when scrolled */}  
         <div className={`mini-logo ${isAtTop ? "hidden" : "visible"}`}>
           <img src={smallLogo} alt="Mini Logo" />
         </div>
@@ -203,6 +231,7 @@ export default function Header() {
 
         {/* Navigation Links */}
         <div className={`nav-links ${menuOpen ? "show" : ""}`}>
+          {/* <span className="phone-num">+91 9824372633</span> */}
           <Link to="/">Home</Link>
 
           {/* Dropdown */}
@@ -212,20 +241,22 @@ export default function Header() {
             </Link>
             <div className="dropdown-content">
                 <div className="dropdown-left">
-      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <h1>From classroom to career: IT foundation and global readiness for young minds.</h1>
       <p>
-        At Information Technology Centre (ITC), we believe that the right skills
-        can transform your future. Our mission is to bridge the gap between
-        education and industry by offering hands-on training, real-world
-        projects, and career-focused programs.
+        From classroom to career: IT foundation and global readiness for young minds.
       </p>
     </div>
 <div className="dropdown-right">
-              <Link to="/careercounselling">Career Counselling</Link>
-              <Link to="/skilldevelopment">Skill Development Program</Link>
-              <Link to="/kidscorner">Kid's Corner</Link>
-              <Link to="/vacationcourses">Vacation Courses</Link>
-              <Link to="/teachercorner">Teacher Corner</Link>
+             <Link to="/careercounselling" style={{fontSize:'16px',fontWeight:'600'}}>Career Counselling</Link>
+              <Link to="/10thstd" style={{fontSize:'16px',fontWeight:'600'}}>10th Standard</Link>
+              <Link to="/12thstd" style={{fontSize:'16px',fontWeight:'600'}}>12th Standard</Link>
+              <Link to="/4-9std" style={{fontSize:'16px',fontWeight:'600'}}>4 TO 9 Standard</Link>
+              <Link to="/skilldevelopment" style={{fontSize:'16px',fontWeight:'600'}}>Skill Development Program</Link>
+              <Link to="/earlyearning" style={{fontSize:'16px',fontWeight:'600'}}>Earning Potential for early Students</Link>
+              <Link to="/examsupport" style={{fontSize:'16px',fontWeight:'600'}}>Exam Support Courses</Link>
+              <Link to="/kidscorner" style={{fontSize:'16px',fontWeight:'600'}}>Kid's Corner</Link>
+              <Link to="/vacationcourses" style={{fontSize:'16px',fontWeight:'600'}}>Vacation Courses</Link>
+              <Link to="/teachercorner" style={{fontSize:'16px',fontWeight:'600'}}>Parents Corner</Link>
             </div>
           </div>
 </div>
@@ -235,20 +266,21 @@ export default function Header() {
             </Link>
             <div className="dropdown-content">
                 <div className="dropdown-left">
-      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <h1>Our Professional IT Courses bridge the gap between education and real-world job skills.</h1>
       <p>
-        At Information Technology Centre (ITC), we believe that the right skills
-        can transform your future. Our mission is to bridge the gap between
-        education and industry by offering hands-on training, real-world
-        projects, and career-focused programs.
+       They prepare graduates who lack field experience, as well as 10th/12th pass or dropouts, to become job-ready.
+With industry-recognized certifications, students gain practical skills and career opportunities.
       </p>
     </div>
 <div className="dropdown-right">
-              <Link to="/careercounselling">Career Counselling</Link>
-              <Link to="/skilldevelopment">Skill Development Program</Link>
-              <Link to="/kidscorner">Kid's Corner</Link>
-              <Link to="/vacationcourses">Vacation Courses</Link>
-              <Link to="/teachercorner">Teacher Corner</Link>
+              <Link to="/careercounselling" style={{fontSize:'16px',fontWeight:'600'}}>Career Counselling</Link>
+              <Link to="/10thstd" style={{fontSize:'16px',fontWeight:'600'}}>10th Standard</Link>
+              <Link to="/12thstd" style={{fontSize:'16px',fontWeight:'600'}}>12th Standard</Link>
+              <Link to="/4-9std" style={{fontSize:'16px',fontWeight:'600'}}>4 TO 9 Standard</Link>
+              <Link to="/skilldevelopment" style={{fontSize:'16px',fontWeight:'600'}}>Skill Development Program</Link>
+              <Link to="/earlyearning" style={{fontSize:'16px',fontWeight:'600'}}>Earning Potential for early Students</Link>
+              <Link to="/examsupport" style={{fontSize:'16px',fontWeight:'600'}}>Exam Support Courses</Link>
+            
             </div>
           </div>
 </div>
@@ -262,12 +294,9 @@ export default function Header() {
    
       <div className="dropdown-content">
                 <div className="dropdown-left">
-      <h3>Empower Your Career with Industry-Focused IT Courses</h3>
+      <h1>Empower Your Career with Industry-Focused IT Courses</h1>
       <p>
-        At Information Technology Centre (ITC), we believe that the right skills
-        can transform your future. Our mission is to bridge the gap between
-        education and industry by offering hands-on training, real-world
-        projects, and career-focused programs.
+       Short courses provide quick, low-cost learning for students who need to clear concepts, gain hands-on skills with specific modules or products, or learn new features and technologies. They are ideal for building essential awareness and practical knowledge in minimum time.
       </p>
     </div>
 <div className="dropdown-right">
@@ -370,7 +399,7 @@ export default function Header() {
 
  
            <div className="dropdown">
-  <Link to="/aboutus" className="dropbtn">About us</Link>
+  <Link to="/" className="dropbtn">About us</Link>
 
   <div className="dropdown-content">
     {/* Left side content */}
@@ -386,17 +415,19 @@ export default function Header() {
 
     {/* Right side links */}
     <div className="dropdown-right">
-      <Link to="/careercounselling">Overview</Link>
-      <Link to="/skilldevelopment">Vision & Mission</Link>
-      <Link to="/kidscorner">Leadership</Link>
-      <Link to="/vacationcourses">Infrastructure</Link>
-      <Link to="/vacationcourses">Achievements & Milestone</Link>
-      <Link to="/teachercorner">Gallery</Link>
+      <Link to="/Aboutus" style={{fontSize:'16px',fontWeight:'600'}}>Overview</Link>
+      <Link to="/OurHistory" style={{fontSize:'16px',fontWeight:'600'}} >Leadership</Link>
+      <Link to="/Academic Partners" style={{fontSize:'16px',fontWeight:'600'}}>Academic Partners</Link> 
+      <Link to="/Guildelines" style={{fontSize:'16px',fontWeight:'600'}}>Guildelines</Link>
+      {/* <Link to="/kidscorner" style={{fontSize:'16px',fontWeight:'600'}}>Leadership</Link> */}
+      <Link to="/Infrastructure" style={{fontSize:'16px',fontWeight:'600'}}>Infrastructure</Link>
+      <Link to="/Achievements" style={{fontSize:'16px',fontWeight:'600'}}>Achievements </Link>
+      <Link to="/Gallery" style={{fontSize:'16px',fontWeight:'600'}}>Gallery</Link>
     </div>
   </div>
 </div>
              <div className="dropdown">
-          <Link to="/aboutus" className="dropbtn">Activities</Link>
+          <Link to="" className="dropbtn">Activities</Link>
           <div className="dropdown-content">
              <div className="dropdown-left">
       <h3>Empower Your Career with Industry-Focused IT Courses</h3>
@@ -409,11 +440,11 @@ export default function Header() {
       </p>
     </div>
 <div className="dropdown-right">
-              <Link to="/careercounselling">		Seminars & Workshops</Link>
-              <Link to="/skilldevelopment">	Events & Celebrations</Link>
-              <Link to="/kidscorner">		Student Achievements</Link>
-              <Link to="/vacationcourses">		Gallery</Link>
-              <Link to="/teachercorner">	News & Updates</Link>
+              <Link to="/careercounselling" style={{fontSize:'16px',fontWeight:'600'}}>		Seminars & Workshops</Link>
+              <Link to="/skilldevelopment" style={{fontSize:'16px',fontWeight:'600'}}>	Events & Celebrations</Link>
+              <Link to="/kidscorner" style={{fontSize:'16px',fontWeight:'600'}}>		Student Achievements</Link>
+              <Link to="/vacationcourses" style={{fontSize:'16px',fontWeight:'600'}}>		Gallery</Link>
+              <Link to="/teachercorner" style={{fontSize:'16px',fontWeight:'600'}}>	News & Updates</Link>
             </div>
             </div>
             </div>
@@ -432,13 +463,13 @@ export default function Header() {
       </p>
     </div>
 <div className="dropdown-right">
-              <Link to="/careercounselling">	Project</Link>
-              <Link to="/skilldevelopment">	Internship</Link>
-              <Link to="/kidscorner">	Placement</Link>
-              <Link to="/vacationcourses">Exam Preparation</Link>
-              <Link to="/teachercorner">	Incubation Centre</Link>
-              <Link to="/teachercorner">Idea to reality/ tech innovator/ Bring your Idea</Link>
-              <Link to="/teachercorner">Wellness & Guidance / Counselling corner</Link>
+              <Link to="/careercounselling" style={{fontSize:'16px',fontWeight:'600'}}>	Project</Link>
+              <Link to="/skilldevelopment" style={{fontSize:'16px',fontWeight:'600'}}>	Internship</Link>
+              <Link to="/kidscorner" style={{fontSize:'16px',fontWeight:'600'}}>	Placement</Link>
+              <Link to="/vacationcourses" style={{fontSize:'16px',fontWeight:'600'}}>Exam Preparation</Link>
+              <Link to="/teachercorner" style={{fontSize:'16px',fontWeight:'600'}}>	Incubation Centre</Link>
+              <Link to="/teachercorner" style={{fontSize:'16px',fontWeight:'600'}}>Idea to reality/ tech innovator/ Bring your Idea</Link>
+              <Link to="/teachercorner" style={{fontSize:'16px',fontWeight:'600'}}>Wellness & Guidance / Counselling corner</Link>
             </div>
             </div>
             </div>
