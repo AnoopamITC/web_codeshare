@@ -51,7 +51,11 @@ footer {
   align-items: flex-start;
   gap: 8px;
 }
+.footer-section .cc{
+  margin: 20px 20px;
+  font-size: 25px;
 
+}
 .footer-section ul li svg {
   flex-shrink: 0;
   margin-top: 3px;

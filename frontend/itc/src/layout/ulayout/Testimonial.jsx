@@ -11,22 +11,26 @@ import "./testimonial.css"; // custom css
 import i from '@/assets/images/img1.png'
 import i2 from '@/assets/images/img2.png'
 import i3 from '@/assets/images/img3.png'
+import st1 from '@/assets/images/st1.jpg';
+import st2 from '@/assets/images/st2.jpg';
+import st3 from '@/assets/images/st3.jpg';
+import st4 from '@/assets/images/st4.jpg';
 // Dummy testimonial data – replace with your actual data or fetch from API
 const TESTIMONIALS = [
   {
     id: 1,
     name: "Aarav Shah",
     role: "Full‑Stack Developer",
-    avatar: i,
+    avatar: st3,
     rating: 5,
     text:
       "Super clean UI component! Implementation was quick and performance stayed buttery smooth even with many slides.",
   },
   {
     id: 2,
-    name: "Kiara Patel",
+    name: "Kusum Paliwal",
     role: "AI",
-     avatar: i2,
+     avatar: st4,
     rating: 5,
     text:
       "Loved the autoplay with pause‑on‑hover. Also accessible out of the box – keyboard and ARIA done right.",
@@ -35,16 +39,16 @@ const TESTIMONIALS = [
     id: 3,
     name: "Vikram Mehta",
     role: "Office 365",
- avatar: i3,
+ avatar: st2,
      rating: 4,
     text:
       "Coverflow effect makes the testimonials pop without being distracting. Easy to restyle with Tailwind.",
   },
   {
     id: 4,
-    name: "Sara Khan",
+    name: "Kusum Paliwal",
     role: "Tally",
- avatar: i,
+ avatar: st4,
      rating: 5,
     text:
       "We plugged our CMS data in and it just worked. No jank, even on mobile.",
@@ -53,16 +57,16 @@ const TESTIMONIALS = [
     id: 5,
     name: "Devang Joshi",
     role: "Cyber Security",
- avatar: i2,
+ avatar: st2,
      rating: 5,
     text:
       "Navigation arrows + pagination dots are a great combo. Code is tiny and production‑ready.",
   },
   {
     id: 6,
-    name: "Nisha Raval",
+    name: "Krupa Patel",
     role: "Multimedia",
-     avatar: i3,
+     avatar: st1,
      rating: 4,
     text:
       "Tested on low‑end Android; still smooth thanks to Swiper's virtualized rendering.",
@@ -111,7 +115,7 @@ export default function TestimonialCarousel({
           breakpoints={{
             0: { slidesPerView: 1.05, spaceBetween: 12 },
             640: { slidesPerView: 1.3, spaceBetween: 14 },
-            768: { slidesPerView: 2, spaceBetween: 16 },
+            768: { slidesPerView: 1, spaceBetween: 16 },
             1024: { slidesPerView: 3, spaceBetween: 18 },
           }}
           className="testimonial-swiper"

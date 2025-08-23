@@ -14,11 +14,14 @@ import Earlyearning from '../pages/user/Earlyearning';
 import Examsupport from '../pages/user/Examsupport';
 import Careercouns from '../pages/user/Careercouns';
 import Skilldev from '../pages/user/Skilldev';
+import Internship from '../pages/user/Internship';
+import Internshipform from '../pages/user/Internshipform';
 import Kidscorner from '../pages/user/Kidscorner';
 import Vacationcourses from '../pages/user/Vacationcourses';
 import Teacherscorner from '../pages/user/Teacherscorner';
 import Mainlayout from '../layout/ulayout/Mainlayout';
 import OurHistory from '../pages/user/OurHistory';
+import Internshipapply from '../pages/user/Internshipapply';
 
 const userRoutes = [
   {
@@ -33,17 +36,19 @@ const userRoutes = [
       { path: "studentcorner", element: <Studentcorner /> },
       { path: "offers", element: <Offers /> },
       { path: "schoolcourses", element: <Schoolcourses /> },
-      {path:"10thstd", element: <School10th/>},
-      {path:"12thstd", element: <Sc12th/>},
-      {path:"4-9std", element: <Sc49/>},
-      {path:"earlyearning", element: <Earlyearning/>},
-      {path:"examsupport", element: <Examsupport/>},
+      { path:"10thstd", element: <School10th/>},
+      { path:"12thstd", element: <Sc12th/>},
+      { path:"4-9std", element: <Sc49/>},
+      { path:"earlyearning", element: <Earlyearning/>},
+      { path:"examsupport", element: <Examsupport/>},
       { path: "careercounselling", element: <Careercouns /> },
       { path: "skilldevelopment", element: <Skilldev /> },
       { path: "kidscorner", element: <Kidscorner /> },
       { path: "vacationcourses", element: <Vacationcourses /> },
       { path: "OurHistory", element: <OurHistory /> },
-
+      { path:"internship", element:<Internship/>},
+      { path:"internshipform", element:<Internshipform/>},
+      {path:"internshipapply", element:<Internshipapply/>}
     ],
   },
 ];

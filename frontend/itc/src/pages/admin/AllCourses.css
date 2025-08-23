@@ -1,0 +1,198 @@
+   /* Wrapper */
+        .cm-wrapper {
+          margin: 40px auto;
+          padding: 30px;
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Header */
+        .cm-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-bottom: 30px;
+        }
+        .cm-title {
+          font-size: 2.4rem;
+          margin: 0;
+          color: #1f2937;
+        }
+        .cm-subtitle {
+          margin: 6px 0 0;
+          color: #6b7280;
+        }
+        .cm-add-btn {
+          background: linear-gradient(90deg,#3b82f6,#06b6d4);
+          color: #fff;
+          border: none;
+          padding: 14px 28px;
+          border-radius: 10px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+        .cm-add-btn:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(59,130,246,0.4);
+        }
+
+        /* Filters */
+        .cm-filters {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          margin-bottom: 30px;
+        }
+        .cm-search, .cm-category, .cm-export {
+          padding: 10px 15px;
+          border-radius: 8px;
+          border: 1px solid #d1d5db;
+          font-size: 14px;
+        }
+        .cm-filter-btn {
+          padding: 10px 18px;
+          border-radius: 8px;
+          border: 1px solid #d1d5db;
+          background: #f9fafb;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+        .cm-filter-btn:hover, .cm-export:hover {
+          background: #eef2ff;
+        }
+
+        /* Grid */
+        .cm-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 28px;
+        }
+
+        @media(max-width: 1200px) {
+          .cm-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        @media(max-width: 900px) {
+          .cm-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media(max-width: 600px) {
+          .cm-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        /* Card */
+        .cm-card {
+          background: #fff;
+          border-radius: 18px;
+          overflow: hidden;
+          box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+          display: flex;
+          flex-direction: column;
+          transition: all 0.3s;
+        }
+        .cm-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+        }
+
+        .cm-img-container {
+          position: relative;
+        }
+        .cm-img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          transition: transform 0.3s;
+        }
+        .cm-card:hover .cm-img {
+          transform: scale(1.05);
+        }
+        .cm-price-tag {
+          position: absolute;
+          top: 14px;
+          right: 14px;
+          background: #16a34a;
+          color: #fff;
+          padding: 6px 12px;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+
+        .cm-card-content {
+          padding: 22px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .cm-category-tag {
+          color: #3b82f6;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+        .cm-card-title {
+          font-size: 1.3rem;
+          margin: 0;
+          color: #111827;
+        }
+        .cm-card-desc {
+          font-size: 0.95rem;
+          color: #4b5563;
+          line-height: 1.4;
+        }
+        .cm-stats {
+          display: flex;
+          gap: 18px;
+          font-size: 0.9rem;
+          color: #6b7280;
+        }
+        .cm-actions {
+          display: flex;
+          gap: 10px;
+          margin-top: 12px;
+        }
+        .cm-edit-btn {
+          flex: 1;
+          padding: 12px 12px;
+          background: #3b82f6;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          font-weight: 600;
+          transition: all 0.3s;
+        }
+        .cm-edit-btn:hover {
+          background: #2563eb;
+        }
+        .cm-delete-btn {
+          flex: 1;
+          padding: 12px 12px;
+          background: #fef2f2;
+          color: #dc2626;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          font-weight: 600;
+          transition: all 0.3s;
+        }
+        .cm-delete-btn:hover {
+          background: #fee2e2;
+        }
+
+        /* Responsive adjustments */
+        @media(max-width: 768px) {
+          .cm-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+          }
+          .cm-filters {
+            flex-direction: column;
+          }
+        }

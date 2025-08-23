@@ -1,21 +1,21 @@
-import { UserRound } from 'lucide-react';
-import './App.css'
-import React from 'react';
-import {BrowserRouter as Router, Routes, Route, useRoutes} from 'react-router-dom';
-import userRoutes from './routes/userRoutes';
-// import userRoutes from '../userRoutes.jsx';
-// import Testimonial from './layout/ulayout/Testimonial.jsx'
+import React from "react";
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
+import userRoutes from "./routes/userRoutes";
+import adminRoutes from "./routes/adminRoutes";
+
 function App() {
-const AppRoutes = () => {
-  const element = useRoutes(userRoutes);
-  return element;
-};
+  const AppRoutes = () => {
+    // combine user + admin routes
+    const routes = [...userRoutes, ...adminRoutes];
+    const element = useRoutes(routes);
+    return element;
+  };
 
   return (
- <Router>
+    <Router>
       <AppRoutes />
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

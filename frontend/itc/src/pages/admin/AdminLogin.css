@@ -1,0 +1,112 @@
+/* Background with animated gradient */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: white;
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gradient Animation */
+
+/* Glassmorphism card */
+.login-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Title */
+.login-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #0f0f0f;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #141516;
+  margin-bottom: 25px;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input fields */
+.form-group input {
+  width: 90%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(15, 15, 15, 0.15);
+  color: #111010;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: #0f0f0f;
+}
+
+.form-group input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 0px 8px rgba(37, 99, 235, 0.8);
+}
+
+/* Button */
+.login-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #faf5f5;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 15px rgba(37, 99, 235, 0.6);
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #0d0d0e;
+}
+
+.reset-link {
+  color: #60a5fa;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.reset-link:hover {
+  color: #93c5fd;
+}

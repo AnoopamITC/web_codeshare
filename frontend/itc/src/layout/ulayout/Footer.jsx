@@ -26,6 +26,11 @@ const Footer = () => {
                 divyesh@itcentre.org
               </span>
             </li>
+            {/* <li>  <span className="cc">  <Link to=''><FaFacebookF style={{gap:'25px'}}/></Link>
+          <Link to=''><FaInstagram  style={{gap:'25px'}}/></Link>
+          <Link to=''><FaYoutube  style={{gap:'25px'}}/></Link>
+          <Link to=''><FaWhatsapp  style={{gap:'25px'}}/></Link>
+          <Link to=''><FaSnapchatGhost  style={{gap:'25px'}}/></Link></span></li> */}
           </ul>
         </div>
 
@@ -70,11 +75,7 @@ const Footer = () => {
           © 2025 ITC Inc. All rights reserved.
         </div>
         <div className="footer-right social-icons">
-          <Link to=''><FaFacebookF /></Link>
-          <Link to=''><FaInstagram /></Link>
-          <Link to=''><FaYoutube /></Link>
-          <Link to=''><FaWhatsapp /></Link>
-          <Link to=''><FaSnapchatGhost /></Link>
+      
         </div>
       </div>
     </footer>

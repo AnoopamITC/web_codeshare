@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
-import AdminHeader from './AdminHeader';
-import AdminSidebar from './AdminSidebar';
-import './Admin.css';
-import { useLocation } from 'react-router-dom';
-const Adminlayout = ({ children }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const location = useLocation();
-  const isLoginPage = location.pathname === '/admin';
+import React from "react";
+import SideBar from "../../pages/admin/SideBar";
+import { Outlet } from "react-router-dom";
+
+const AdminLayout = ({ children }) => {
   return (
-    <div className="admin-layout">
-      <AdminHeader toggleSidebar={() => setSidebarOpen(!sidebarOpen)} showMenuIcon={!isLoginPage}/>
-      <div className="content-area">
-        {!isLoginPage && <AdminSidebar isOpen={sidebarOpen} />}
-        <main className="admin-main">
-          {children}
-        </main>
-      </div>
+    <div>
+      {/* Sidebar / Header here */}
+      <Outlet />  {/* <-- child components will render here */}
     </div>
   );
 };
 
-export default Adminlayout;
+export default AdminLayout;
+

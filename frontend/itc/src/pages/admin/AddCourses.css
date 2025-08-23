@@ -1,0 +1,119 @@
+.adm-addcourse-container {
+          max-width: 1400px;
+          margin: 50px auto;
+          padding: 40px 30px;
+          background: #f4f6f8;
+          border-radius: 20px;
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        .adm-addcourse-title {
+          text-align: center;
+          margin-bottom: 40px;
+          font-size: 32px;
+          font-weight: 700;
+          color: #1f2937;
+        }
+
+        .adm-addcourse-form {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .adm-form-section {
+          background: #fff;
+          padding: 25px 30px;
+          border-radius: 18px;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .adm-form-section:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .adm-section-title {
+          margin-bottom: 25px;
+          font-size: 24px;
+          color: #1f2937;
+          font-weight: 600;
+          border-left: 4px solid #3b82f6;
+          padding-left: 12px;
+        }
+
+        .adm-section-fields {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px 30px;
+        }
+
+        .adm-form-group {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .adm-form-group label {
+          margin-bottom: 8px;
+          font-weight: 600;
+          color: #374151;
+        }
+
+        .adm-form-input {
+          padding: 14px 18px;
+          border-radius: 12px;
+          border: 1px solid #d1d5db;
+          font-size: 15px;
+          transition: all 0.3s;
+        }
+
+        .adm-form-input:focus {
+          outline: none;
+          border-color: #3b82f6;
+          box-shadow: 0 0 8px rgba(59,130,246,0.3);
+        }
+
+        .adm-form-textarea {
+          min-height: 100px;
+          resize: vertical;
+        }
+
+        .adm-submit-btn {
+          align-self: center;
+          padding: 18px 30px;
+          font-size: 17px;
+          font-weight: 700;
+          background: linear-gradient(90deg,#3b82f6,#06b6d4);
+          color: #fff;
+          border: none;
+          border-radius: 14px;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+
+        .adm-submit-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 25px rgba(59,130,246,0.4);
+        }
+
+        @media(max-width: 1024px) {
+          .adm-section-fields {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media(max-width: 480px) {
+          .adm-addcourse-container {
+            padding: 25px 15px;
+          }
+          .adm-addcourse-title {
+            font-size: 26px;
+          }
+          .adm-section-title {
+            font-size: 20px;
+          }
+          .adm-submit-btn {
+            width: 100%;
+          }
+        }

@@ -19,10 +19,10 @@ const AdminSidebar = ({ isOpen }) => {
   const showText = isOpen || isMobile;
 
   const menuItems = [
-    { name: 'Dashboard', icon: <FaTachometerAlt />, path: '/admindashboard' },
+    { name: 'Dashboard', icon: <FaTachometerAlt />, path: '/dashboard' },
     { name: 'Users', icon: <FaUsers />, path: '/users' },
     { name: 'Settings', icon: <FaCog />, path: '/settings' },
-    
+    { name: 'Internship', icon: <FaCog />, path: '/admininternship'}
   ];
 
   return (

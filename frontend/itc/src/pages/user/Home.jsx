@@ -19,28 +19,44 @@ import i21 from '@/assets/images/14.jpg';
 import i22 from '@/assets/images/15.jpg';
 import i23 from '@/assets/images/16.jpg';
 import i24 from '@/assets/images/17.jpg';
-import a1 from '@/assets/images/a1.png';
-import a2 from '@/assets/images/a2.png';
-import  a3 from '@/assets/images/a3.jpg';
-import a4 from '@/assets/images/a4.png';
-import ai1 from '@/assets/images/a1.jpg'
-import ai2 from '@/assets/images/a2.jpg'
-import ai3 from '@/assets/images/a5.jpg'
-import ai4 from '@/assets/images/a6.jpg'
-import ai5 from '@/assets/images/a7.jpg'
-import t1 from "@/assets/images/t1.png"
-import t2 from "@/assets/images/t2.png"
-import t3 from "@/assets/images/t3.png"
-import h4c from "@/assets/images/help4career.png"
+import ai1 from '@/assets/images/a1.jpg';
+import ai2 from '@/assets/images/a2.jpg';
+import ai3 from '@/assets/images/a5.jpg';
+import ai4 from '@/assets/images/a6.jpg';
+import ai5 from '@/assets/images/a7.jpg';
+import t1 from "@/assets/images/t1.png";
+import t2 from "@/assets/images/t2.png";
+import t3 from "@/assets/images/t3.png";
+import ap1 from "@/assets/images/ap1.png";
+import ap2 from "@/assets/images/ap2.png";
+import ap3 from "@/assets/images/ap3.png";
+import ap4 from "@/assets/images/ap4.png";
+import ap5 from "@/assets/images/ap5.png";
+import h4c from "@/assets/images/help4career.png";
+import  itc from "@/assets/images/round.png";
+import fi1 from "@/assets/images/fi1.png";
+import fi2 from "@/assets/images/fi2.png";
+import fi3 from "@/assets/images/fi3.png";
+import fi4 from "@/assets/images/fi4.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, FreeMode, EffectFade} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Home.css';
-import { Users, Briefcase, Calendar, BookOpen,  ArrowUpRight, BadgeCheck,  } from "lucide-react";
+import {
+  Users,
+  Briefcase,
+  Calendar,
+  BookOpen,
+  ArrowUpRight,
+  BadgeCheck,
+  PlayCircle,
+  Building2, Facebook, Instagram, Youtube, Twitter
+} from "lucide-react";
 import { MotionConfig, motion } from "framer-motion";
 import Testimonial from "../../layout/ulayout/Testimonial";
+import { FaTrophy } from "react-icons/fa";
 
 
 // course slider
@@ -176,25 +192,85 @@ const cards = [
     title: "",  
     img: "",
   },
+    {
+    title: "",  
+    img: "",
+  },
 ];
 
 //  Achieviements
 
 
 
-const cardData = [
-  { id: 1, img: ai1, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 1996" },
-  { id: 2, img: ai2, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity, 1996" },
-  { id: 3, img: ai3, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 2000" },
-  { id: 4, img: ai4, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity, 2001" },
-  { id: 5, img: ai5, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 2003" },
-  { id: 6, img: ai2, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity" },
-  { id: 7, img: ai3, text: "Best Instructor Award form Autodesk Inc., USA" },
-  { id: 8, img: ai4, text: "Best Instructor Award form Autodesk Inc., USA" },
-  // { id: 9, img: ai5, text: "Card Fi" },
+// const cardData = [
+//   { id: 1, img: ai1, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 1996" },
+//   { id: 2, img: ai2, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity, 1996" },
+//   { id: 3, img: ai3, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 2000" },
+//   { id: 4, img: ai4, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity, 2001" },
+//   { id: 5, img: ai5, text: "Best Computer Training Center Award DOEACC O Level, Govt. of India, 2003" },
+//   { id: 6, img: ai2, text: "First Position in the National Level Project Presentation Competiton Organized by DOEACC Socity" },
+//   { id: 7, img: ai3, text: "Best Instructor Award form Autodesk Inc., USA" },
+//   { id: 8, img: ai4, text: "Best Instructor Award form Autodesk Inc., USA" },
+//   { id: 9, img: ai5, text: "Card Fi" },
  
+// ];
+
+  const achievements = [
+    { year: "2023", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai1},
+    { year: "2000", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai2},
+    { year: "1997", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai3 },
+    { year: "2010", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.",img: ai4 },
+    { year: "2015", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai5},
+    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.",img: ai1  },
+    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai5},
+    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.",img: ai3},
+  ];
+
+
+
+// partners
+  
+const partners = [
+    { id: 1, logo:ap1 , name: "NIELIT" },
+    { id: 2, logo:ap2, name: "Microsoft" },
+    { id: 3, logo:ap3 , name: "Tally" },
+    { id: 4, logo:ap4, name: "Autodesk Training" },
+    { id: 5, logo:ap5 , name: "Autodesk Learning" },
+  ];
+
+
+  // why choose itc
+  const stats = [
+    { icon: <BookOpen/>, label: "Legacy & Trust" },
+    { icon:  <BookOpen/>, label: "Practical & Job-Oriented Training"},
+    { icon: <BookOpen/> , label: "Placement & Career Support" },
+    { icon: <BookOpen/>, label: "Innovation & Growth Opportunities" },
+    { icon: <BookOpen/>, label: "Complete Development" },
+    { icon: <BookOpen/>, label: "Qualified & Supportive Faculty" },
+    { icon: <BookOpen/>, label: "Modern Infrastructure"},
+    { icon:  <BookOpen/>, label: "Community & Recognition" }
+  ];
+
+const follow = [
+  { id: 1, img: fi2 ,isVideo: true },
+  { id: 2, img: fi1, isVideo: false  },
+  { id: 3, img: fi3,isVideo: false  },
+  { id: 4, img: fi4,isVideo: true  },
+  { id: 5, img: fi2,isVideo: true  },
+  { id: 1, img: fi3, isVideo: false  },
+  { id: 2, img: fi2,isVideo: true  },
+  { id: 3, img: fi3,isVideo: false  },
+  { id: 4, img: fi2 ,isVideo: true },
+  { id: 5, img: fi4,isVideo: true  },
 ];
 
+
+// infrastructure
+// const infrastructureData = [
+//   { id: 1, title: "Modern Labs", description: "Equipped with latest technology.", image: i20 },
+//   { id: 2, title: "Server Room", description: "High-performance IT infrastructure.", image: i23 },
+//   { id: 3, title: "Office Spaces", description: "Comfortable and collaborative workspace.", image: i22 },
+// ];
 
 const Home = () => {
   return (
@@ -337,7 +413,7 @@ Our mission is to bridge the gap between education and industry by offering hand
         transition={{ duration: 1.2, delay: 0.5 }}
         className="relative text-4xl font-bold text-black text-center"
       >
-        Legacy <br /> of <br /> Excellence
+       <span style={{ color:'navy', fontSize:'34px', fontWeight:'700'}}> Legacy of</span> <br /><span style={{color:'#d71920', fontSize:'34px', fontWeight:'700'}}>Excellence</span>
       </motion.h1>
     </div>
     {items.map((item) => {
@@ -375,32 +451,6 @@ Our mission is to bridge the gap between education and industry by offering hand
 
 {/* Counter  */}
 
-{/* <MotionConfig reducedMotion="user">
-  <div className="counter-container">
-    {items.map((item) => {
-      const { value, ref } = useCountUpOnView(item.value, 900);
-      return (
-        <div key={item.id} className="counter-card" ref={ref}> */}
-          {/* Number at top */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35 }}
-            className="counter-value"
-          >
-            {value.toLocaleString()}+
-          </motion.div> */}
-
-          {/* Icon + Text side-by-side */}
-          {/* <div className="counter-header">
-            <span className="counter-icon">{item.icon}</span>
-            <span className="counter-label">{item.label}</span>
-          </div>
-        </div>
-      );
-    })}
-  </div>
-</MotionConfig> */}
 
 {/* top courses */}
 <div className="top-course">
@@ -412,8 +462,9 @@ Our mission is to bridge the gap between education and industry by offering hand
         
         {courseList.map((course, index) => (
           <div key={index} className="course">
-            <h3 className="course-title">{course.title}</h3>
             <img src={course.image} alt={course.title} className="course-image" />
+            <h3 className="course-title">{course.title}</h3>
+            
             <p className="course-description">{course.description}</p>
             <a href={course.link} className="explore-button">
               Explore More <ArrowUpRight size={18} />
@@ -442,27 +493,46 @@ Our mission is to bridge the gap between education and industry by offering hand
 {/* Corporate training  */}
 <div className="training">
   <h2>Academic & Industry Connect</h2>
- <div className="info-cards-container">
-      {cards.map((card, index) => (
-        <div key={index} className="info-card">
-          <div
-            className="card-top"
-            // style={{ backgroundColor: card.bgColor }}
-          >
-            <h3>{card.title}</h3>
-           
-          </div>
-          {/* <div className="card-image">
-            <img src={card.image} alt={card.title} />
-          </div> */}
-           <p>{card.description}</p>
+  <div className="info-cards-container">
+    {cards.map((card, index) => (
+      <div key={index} className="info-card">
+        <div className="card-top">
+          <h3>{card.title}</h3>
         </div>
-      ))}
-    </div>
- </div>
+        <p>{card.description}</p>
+
+        {/* Circle with Image */}
+        <div className="card-circle">
+          <img src={card.image} alt={card.title} />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+
+ {/* Partners */}
+
+ <section className="partners-section">
+      <h2 className="partners-title">Academic Partners</h2>
+      <div className="partners-grid">
+        {partners.map((p) => (
+          <div key={p.id} className="partner-card">
+            <img src={p.logo} alt={p.name} />
+          </div>
+        ))}
+      </div>
+    </section>
+
+
+
+
+
 {/* Achieviements */}
 
-  <div className="awards-section">
+  {/* <div className="awards-section">
   <div className="slider-container" style={{ padding: "40px" }}>
     
     <Swiper
@@ -478,9 +548,9 @@ Our mission is to bridge the gap between education and industry by offering hand
         1024: { slidesPerView: 4 },
       }}
       className="mySwiper"
-    >
+    > */}
       {/* Slides */}
-      {cardData.map((card) => (
+      {/* {cardData.map((card) => (
         <SwiperSlide key={card.id}>
           <div
             style={{
@@ -502,17 +572,169 @@ Our mission is to bridge the gap between education and industry by offering hand
           </div>
         </SwiperSlide>
       ))}
-    </Swiper>
-    <h2 className="awards-title">
+    </Swiper> */}
+    {/* <h2 className="awards-title">
       <span> Our </span> <br /><span className='Blue'>Achievements</span>
-    </h2>
+    </h2> */}
+    {/* <img className="awards-title" src={oa1} alt="" />
+  </div>
+</div> */}
+
+{/* why choose itc */}
+{/* 
+         <section className="why-container">
+      <h2>WHY CHOOSE ITC?</h2>
+      <div className="why-content"> */}
+        {/* Image with circle icons */}
+        {/* <div className="circle-image-wrapper">
+          <img src={itc} alt="student" className="main-img" /> */}
+
+          {/* Icons on border */}
+          {/* {contain.map((item, i) => (
+            <div key={i} className={`circle-icon pos-${i + 1}`}>
+        <div className="why-container">
+  <h1 className="why-title">Why Choose ITC?</h1> {/* Title moved up & centered */}
+
+  {/* <div className="why-container">
+  <h1 className="why-title">Why Choose ITC?</h1> {/* Title moved up & centered */}
+
+  {/*<div className="why-wrapper"> */}
+    {/* Left Image Section */}
+    {/* <div className="why-left">
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        alt="Happy students"
+        className="why-img"
+      />
+    </div> */}
+
+    {/* Right Stats Section */}
+    {/* <div className="why-right">
+      <div className="stats-list">
+        {stats.map((stat, index) => (
+          <div key={index} className="stat-item">
+            <div className="stat-left">
+              <div className="stat-icon">{stat.icon}</div>
+              <span className="stat-label">{stat.label}</span>
+            </div>
+            <div className="stat-line">
+              <div className="stat-dot"></div>
+            </div>
+            <div className="stat-value-box">
+              <div className="stat-arrow"></div>
+              <span className="stat-value">{stat.value}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div> */}
+
+
+
+        {/* Texts */}
+        {/* <div className="why-text-list">
+          {contain.map((item, i) => (
+            <div key={i} className="why-text">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+
+
+
+          className={`stat-icon stat-icon-${i + 1}`}
+
+        </div> */}
+      {/* </div> */}
+    {/* </section> */}
+
+    {/* ===== Why Choose ITC Section ===== */}
+<section className="why-container">
+  <h1 className="why-title">Why Choose ITC?</h1>
+
+  <div className="why-wrapper">
+  
+    <div className="why-left">
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        alt="Happy students"
+        className="why-img"
+      />
+ </div>
+     
+      <div className="circle-image-wrapper">
+        {stats.map((item, i) => (
+          <div key={i} className={`circle-icon pos-${i + 1}`} >
+            {item.icon}
+          </div>
+        ))}
+     
+    
+    </div>
+
+    
+    <div className="why-right">
+      <div className="stats-list">
+        {stats.map((item, index) => (
+          <div key={index} className="stat-item">
+            <span className="stat-label">{item.label}</span>
+         
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{/* achievement */}
+    {/* <div className="unique-achievements-container">
+      <h2>Our Achievements</h2>
+      <div className="unique-cards-container">
+        {achievements.map((achievement, index) => (
+          <div className="unique-card" key={index}>
+            <div className="unique-card-content">
+              <h3>
+                <span className="trophy-circle">
+                  <FaTrophy style={{ color: "#fff", fontSize: "1.5rem" }} /> 
+                </span>
+              </h3>
+              <h3>{achievement.year}</h3>
+              <p>{achievement.description}</p>
+              <div className="unique-card-image">
+                <img src={achievement.img} alt="Achievement" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div> */}
+
+<div className="unique-achievements-container">
+  <h2>Our Achievements</h2>
+  <div className="unique-cards-container">
+    {achievements.map((achievement, index) => (
+      <div className="unique-card" key={index}>
+        <img src={achievement.img} alt="Achievement" className="card-img" />
+        <div className="card-overlay">
+          <h3>{achievement.year}</h3>
+          <p>{achievement.description}</p>
+        </div>
+      </div>
+    ))}
   </div>
 </div>
+
+
+
 
 <div className="review">
 <Testimonial/>
 </div>
-<div className="indust">
+{/* <div className="indust">
   <div className="indust-text">
     <h1>infrastructure</h1>  
     <p>Lorem ipsum dolor, sit amet consectetur a
@@ -529,7 +751,64 @@ Our mission is to bridge the gap between education and industry by offering hand
       <img src={i15} alt="" />
       <img src={i15} alt="" />
     </div>
-</div>
+</div> */}
+
+
+
+{/* 
+   <section className="infrastructure-section">
+      <h2>Our State-of-the-Art Infrastructure</h2>
+      <p>Providing world-class facilities to enhance learning and innovation.</p>
+
+      <div className="infrastructure-grid">
+        {infrastructureData.map((item) => (
+          <div key={item.id} className="infra-card">
+            <img src={item.image} alt={item.title} />
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <button className="btn">Explore More</button>
+    </section> */}
+
+        <div className="follow-container">
+          <div className="follow-header">
+      <h2 className="follow-title">Follow Us on Social Media</h2>
+        <div className="social-icons">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <Facebook size={45} style={{color:'03063d'}}/>
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <Instagram size={45} style={{color:'03063d'}}/>
+      </a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+        <Youtube size={45} style={{color:'03063d'}}/>
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <Twitter size={45}style={{color:'03063d'}} />
+      </a>
+    </div>
+    </div>
+      <div className="follow-card">
+        {follow.map((item) => (
+          <div key={item.id} className="follow-cd">
+            <img src={item.img} alt="social logo" className="follow-img" />
+             {item.isVideo && (
+              <div className="play-icon">
+                <PlayCircle size={48} />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+
+
+
+    
 {/* <h1></h1> */}
     </>
   );
