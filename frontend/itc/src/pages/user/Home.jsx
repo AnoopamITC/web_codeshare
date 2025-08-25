@@ -24,6 +24,9 @@ import ai2 from '@/assets/images/a2.jpg';
 import ai3 from '@/assets/images/a5.jpg';
 import ai4 from '@/assets/images/a6.jpg';
 import ai5 from '@/assets/images/a7.jpg';
+import ai6 from '@/assets/images/a8.jpg';
+import ai7 from '@/assets/images/a9.jpg';
+import ai8 from '@/assets/images/a10.jpg';
 import t1 from "@/assets/images/t1.png";
 import t2 from "@/assets/images/t2.png";
 import t3 from "@/assets/images/t3.png";
@@ -38,6 +41,21 @@ import fi1 from "@/assets/images/fi1.png";
 import fi2 from "@/assets/images/fi2.png";
 import fi3 from "@/assets/images/fi3.png";
 import fi4 from "@/assets/images/fi4.png";
+import train1 from "@/assets/images/train1 int.jfif"
+import train2 from "@/assets/images/tain2 project.jfif"
+import train3 from "@/assets/images/tain 2corp.jfif"
+import train4 from "@/assets/images/train 4incub.jfif"
+import train5 from "@/assets/images/train 5 teach.jfif"
+import train6 from "@/assets/images/train6 cert.png";
+import Aca1 from "@/assets/images/academ1.jfif"
+import Aca2 from "@/assets/images/academ2.jfif"
+import infra1 from "@/assets/images/iserver1.webp";
+import infra2 from "@/assets/images/ilab2.webp";
+import infra3 from "@/assets/images/ipowerbackup.png";
+import infra4 from "@/assets/images/isecure.png";
+import infra5 from "@/assets/images/ismartclassroom.png";
+import infra6 from "@/assets/images/ihighspeednet.png";
+ 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, FreeMode, EffectFade} from 'swiper/modules';
 import 'swiper/css';
@@ -56,7 +74,7 @@ import {
 } from "lucide-react";
 import { MotionConfig, motion } from "framer-motion";
 import Testimonial from "../../layout/ulayout/Testimonial";
-import { FaTrophy } from "react-icons/fa";
+import { FaShieldAlt, FaBriefcase, FaUserGraduate, FaRocket, FaLayerGroup, FaUsers, FaBuilding, FaAward } from "react-icons/fa";
 
 
 // course slider
@@ -174,27 +192,27 @@ const cards = [
 
   {
     title: "Student Internship",
-    img: t1,
+    image: train1,
   },
   {
-    title: "Industry Project",  
-    img: "",
+    title: "Student Project",  
+    image: train2,
   },
   {
     title: "Corporate Training",
-    img: "",
+    image: train3,
   },
   {
-    title: "", 
-    img: "", 
+    title: "Incubation Support", 
+    image: train4, 
   },
   {
-    title: "",  
-    img: "",
+    title: "Teacher Development",  
+    image: train5,
   },
     {
-    title: "",  
-    img: "",
+    title: "Certification Support",  
+    image: train6,
   },
 ];
 
@@ -221,9 +239,9 @@ const cards = [
     { year: "1997", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai3 },
     { year: "2010", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.",img: ai4 },
     { year: "2015", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai5},
-    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.",img: ai1  },
-    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai5},
-    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.",img: ai3},
+    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.",img: ai6  },
+    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.", img: ai7},
+    { year: "2020", description: "At ITC, we believe that a great learning experience starts with an exceptional environment.",img: ai8},
   ];
 
 
@@ -241,14 +259,14 @@ const partners = [
 
   // why choose itc
   const stats = [
-    { icon: <BookOpen/>, label: "Legacy & Trust" },
-    { icon:  <BookOpen/>, label: "Practical & Job-Oriented Training"},
-    { icon: <BookOpen/> , label: "Placement & Career Support" },
-    { icon: <BookOpen/>, label: "Innovation & Growth Opportunities" },
-    { icon: <BookOpen/>, label: "Complete Development" },
-    { icon: <BookOpen/>, label: "Qualified & Supportive Faculty" },
-    { icon: <BookOpen/>, label: "Modern Infrastructure"},
-    { icon:  <BookOpen/>, label: "Community & Recognition" }
+    { icon:  <FaShieldAlt size={20}/>, label: "Legacy & Trust" },
+    { icon:  <FaBriefcase size={20}/>, label: "Practical & Job-Oriented Training"},
+    { icon: <FaUserGraduate size={20} /> , label: "Placement & Career Support" },
+    { icon: <FaRocket size={20}/>, label: "Innovation & Growth Opportunities" },
+    { icon: <FaLayerGroup size={20}/>, label: "Complete Development" },
+    { icon: <FaUsers size={20}/>, label: "Qualified & Supportive Faculty" },
+    { icon: <FaBuilding size={20}/>, label: "Modern Infrastructure"},
+    { icon:  <FaAward size={20}/>, label: "Community & Recognition" }
   ];
 
 const follow = [
@@ -266,11 +284,46 @@ const follow = [
 
 
 // infrastructure
-// const infrastructureData = [
-//   { id: 1, title: "Modern Labs", description: "Equipped with latest technology.", image: i20 },
-//   { id: 2, title: "Server Room", description: "High-performance IT infrastructure.", image: i23 },
-//   { id: 3, title: "Office Spaces", description: "Comfortable and collaborative workspace.", image: i22 },
-// ];
+
+const infrastructureData = [
+  {
+    id: 1,
+    img: infra1,
+    title: "Server",
+    description: "Uninterrupted operations with robust UPS and generator support."
+  },
+  {
+    id: 2,
+    img:infra2,
+    title: "Modern Labs",
+    description: "Equipped with the latest tools and technologies for practical learning."
+  },
+  {
+    id: 3,
+    img: infra3,
+    title: "24/7 Power Backup",
+    description: "Extensive resources and quiet study spaces for students."
+  },
+  {
+    id: 4,
+    img: infra4,
+    title: "Secure Data",
+    description: "High-speed internet and powerful machines for projects and research."
+  },
+  {
+    id: 5,
+    img:infra5 ,
+    title: "Smart Classroom",
+    description: "Indoor and outdoor facilities to encourage physical activities."
+  },
+  {
+    id: 6,
+    img:infra6 ,
+    title: "High-Speed Internet",
+    description: "Nutritious meals and a vibrant environment for socializing."
+  },
+];
+
 
 const Home = () => {
   return (
@@ -299,8 +352,13 @@ Our mission is to bridge the gap between education and industry by offering hand
       <img src={h4c} alt="Help4Career Logo" />
     </div>
     <div class="career-right">
-      <h4 class="career-title">Discover Your Perfect Career</h4>
-      <p class="career-subtitle">AI-based counselling that helps you explore opportunities, plan effectively, and achieve your dream career.</p>
+      <h4 class="career-title"> <span style={{fontSize:"18px", marginLeft:"40px",color:"#002366", lineHeight: "2rem"}}>Artificial Intelligences based Counselling:</span><br/>
+<span style={{color:'#d32f2f', marginLeft:"110px"}}><i><u>From Confusion to Clarity</u></i></span></h4>
+      <p class="career-subtitle"> <b style={{lineHeight: "2rem"}}>Confused about your future? Let AI guide you.</b>
+<center style={{color:'#d32f2f'}}>Smart career advice, just for you.<br></br>
+Decide today, shine tomorrow!</center>
+  
+</p>
       <a href="https://www.help4career.com/" target='_blank' class="career-btn">Start Now</a>
     </div>
     
@@ -358,12 +416,12 @@ Our mission is to bridge the gap between education and industry by offering hand
     <div className="courses-slider">
 <Swiper
   modules={[Autoplay]}
-  spaceBetween={10}
+  spaceBetween={15}
   slidesPerView={10} // auto width for smooth continuous scroll
   loop={true}
   freeMode={true}
   freeModeMomentum={true}
-  speed={2000} // slow & smooth
+  speed={4000} // slow & smooth
   allowTouchMove={false}
   autoplay={{
     delay: 0,
@@ -492,18 +550,22 @@ Our mission is to bridge the gap between education and industry by offering hand
 
 {/* Corporate training  */}
 <div className="training">
-  <h2>Academic & Industry Connect</h2>
+  <div className="aca-image">
+  <img src={Aca1} className='aca'/><h2>Academic & Industry Connect</h2>
+
+  <img src={Aca2} alt="" className='aca'/></div>
   <div className="info-cards-container">
     {cards.map((card, index) => (
       <div key={index} className="info-card">
         <div className="card-top">
-          <h3>{card.title}</h3>
+           <img src={card.image} alt={card.title} />
+     
         </div>
         <p>{card.description}</p>
 
         {/* Circle with Image */}
         <div className="card-circle">
-          <img src={card.image} alt={card.title} />
+              <h3>{card.title}</h3>
         </div>
       </div>
     ))}
@@ -676,14 +738,16 @@ Our mission is to bridge the gap between education and industry by offering hand
 
     
     <div className="why-right">
-      <div className="stats-list">
-        {stats.map((item, index) => (
-          <div key={index} className="stat-item">
-            <span className="stat-label">{item.label}</span>
-         
-          </div>
-        ))}
+    <div className="stats-list">
+  {stats.map((item, index) => (
+    <div key={index} className="stat-item">
+      <div className={`tag t-${index + 1}`}>
+        <span className="stat-label">{item.label}</span>
       </div>
+    </div>
+  ))}
+</div>
+
     </div>
   </div>
 </section>
@@ -734,44 +798,50 @@ Our mission is to bridge the gap between education and industry by offering hand
 <div className="review">
 <Testimonial/>
 </div>
-{/* <div className="indust">
-  <div className="indust-text">
-    <h1>infrastructure</h1>  
-    <p>Lorem ipsum dolor, sit amet consectetur a
-      dipisicing elit. Harum ea magnam qui cumque.<br/>
-       Explicabo, voluptatibus! Adipisci cumque voluptatum,<br/>
-        ut accusamus quisquam dicta, 
-      molestias quo tempore odit dolor dolores recusandae nam.</p></div>
-
-    <div className="indust-img">
-      <img src={i15} alt="" />
-      <img src={i15} alt="" />
-      <img src={i15} alt="" />
-      <img src={i15} alt="" />
-      <img src={i15} alt="" />
-      <img src={i15} alt="" />
-    </div>
-</div> */}
 
 
 
-{/* 
-   <section className="infrastructure-section">
-      <h2>Our State-of-the-Art Infrastructure</h2>
-      <p>Providing world-class facilities to enhance learning and innovation.</p>
 
-      <div className="infrastructure-grid">
+{/* infrastructure */}
+  <section className="infrastructure-section">
+      <h2 className="infrastructure-title">Our Infrastructure</h2>
+
+      <Swiper
+        loop={true}
+        freeMode={true}
+        freeModeMomentum={true}
+        grabCursor={true}
+        // speed={1500}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
+        breakpoints={{
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        spaceBetween={25}
+        modules={[Autoplay, FreeMode]}
+        className="infrastructure-swiper"
+      >
         {infrastructureData.map((item) => (
-          <div key={item.id} className="infra-card">
-            <img src={item.image} alt={item.title} />
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
+          <SwiperSlide key={item.id}>
+            <div className="infra-card">
+              <img src={item.img} alt={item.title} className="infra-image" />
+              <div className="infra-content">
+                <h3 className="infra-title">{item.title}</h3>
+                <p className="infra-desc">{item.description}</p>
+              </div>
+            </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
+    </section>
 
-      <button className="btn">Explore More</button>
-    </section> */}
+
+
+
 
         <div className="follow-container">
           <div className="follow-header">

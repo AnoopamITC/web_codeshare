@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Header.css";
 import frameImg from "/wp_1.png"; // big floating logo
 import smallLogo from "/final2.png"; // smaller version for blue bar
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {FaSearch,FaDownload,  FaUserGraduate, FaCertificate, FaChevronRight} from "react-icons/fa";
 import { PiStudentBold } from "react-icons/pi";
 import { AiOutlineForm,AiOutlineDownload  } from "react-icons/ai";   
@@ -17,6 +17,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState(false);
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
  const courseData = [
   
     {
@@ -175,7 +176,7 @@ export default function Header() {
         <Link>Download</Link>
         <Link>Alumni</Link>
         <Link>Certificate Authentication</Link>
-        <button className="login">Login</button>
+        <Link style={{ color: "black", marginLeft: '15px'}} className="login" target="_blank" to='http://172.16.10.196:5173/AdminLogin'>Login</Link>
         <button className="search">Search...<FaSearch className="icsearch"/></button>
        
 
@@ -231,7 +232,7 @@ export default function Header() {
   onMouseEnter={() => setForceShowHeader(true)} 
   onMouseLeave={() => setForceShowHeader(false)}
 >
-  <Link to="/">Home</Link>
+  <Link to="/" className="dropbtn">Home</Link>
 </div>
 
 

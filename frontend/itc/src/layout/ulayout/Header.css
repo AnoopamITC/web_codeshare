@@ -148,6 +148,7 @@ body {
   border-radius: 40px;
   background-color: #ffffff;
   border: #fff;
+  color: black;
   font-size: 16px;
   font-weight: 500;
 }
@@ -302,10 +303,10 @@ body {
   /* display: flex; */
     max-width: 25%;
     color: #fff;
-    margin-top: 50px;
+    margin-top: 60px;
     /* padding-left:75px; */
     border: solid  #e0e0e0 0.5px;
-    padding: 25px;
+    padding: 20px ;
     height: auto;
    
 }
@@ -751,17 +752,25 @@ sub drop css */
     height: 26px;
   }
 }
+.dropbtn:hover {
+  color: #ffcc00; /* Red when hover */
+}
 
+.drop-cc:hover{
+  color: #ffcc00;
+}
 
 
 
 .dropdown-menu {
-  position: absolute;
-  top: 80%;
+  display: none;
+
+  position: fixed;
+  top: 93.5px;
   left: 0;
-  width: 100vw;            /* 👈 full screen spread */
+  width: 100%;            /* 👈 full screen spread */
   background: #06033d;
-  padding: 30px 0;
+  padding: 30px 60px;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   animation: fadeIn 0.3s ease-in-out;
